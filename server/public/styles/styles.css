@@ -1,0 +1,17 @@
+.grid-item { width: 200px; }
+.grid-item--width2 { width: 400px; }
+
+.artistSubmitBox {
+
+  margin-left: 20px;
+  width: 50%;
+}
+
+.md-tabs-centered-wrapper{
+  display:flex;
+  justify-content:center;
+  height:4.8rem;
+  margin:auto;
+  md-tabs[md-stretch-tabs]{
+    max-width:50% !important; /* or any */
+  }

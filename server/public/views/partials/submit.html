@@ -1,0 +1,65 @@
+<h1>SUBMISSIONS</h1>
+<!-- <md-grid-list md-cols-lg="8" md-cols-gt-md="6" md-row-height-gt-md="1:1" md-row-height="1:1" md-gutter="12px" md-gutter-gt-sm="18px">
+    <md-grid-tile md-rowspan-lg="2" md-colspan="8" md-colspan-sm="6" md-colspan-xs="1"> -->
+
+
+<div ng-cloak>
+  <md-content>
+    <md-tabs md-dynamic-height md-border-bottom>
+      <md-tab label="Submit Artist">
+        <md-content layout-padding class="md-no-momentum">
+          <md-input-container flex="100">
+
+          <md-input-container class="md-block" flex-gt-sm="">
+            <input required="" type="text" name="artist_name" placeholder="Artist Name">
+          </md-input-container>
+
+          <md-input-container class="md-block" flex-gt-sm="">
+            <input required="" type="text" name="artist_email" placeholder="Email">
+          </md-input-container>
+
+          <md-input-container class="md-block" flex-gt-sm="">
+            <input required="" type="text" name="artist_description" placeholder="Short Description">
+          </md-input-container>
+
+          <md-input-container class="md-block" flex-gt-sm="">
+            <input id="fileInput" name="file" type="file" class="ng-hide" multiple>
+            <md-button id="uploadButton" class="md-raised md-primary"> Choose About Image </md-button>
+          </md-input-container>
+
+          <md-input-container class="md-block" flex-gt-sm="">
+            <md-button class="md-accent md-raised" type="submit">Submit</md-button>
+          </md-input-container>
+
+        </md-content>
+      </md-tab>
+
+      <md-tab label="Gallery Submission">
+        <md-content layout-padding class="md-no-momentum">
+
+          <md-input-container flex="33">
+             <label>Artist</label>
+               <md-select ng-model="item.emotionObject.emotion">
+                 <md-option ng-repeat="" ng-value="artist">Artist</md-option>
+               </md-select>
+          </md-input>
+
+            <md-input-container class="md-block" flex-gt-md="">
+              <input required="" type="text" name="title" placeholder="Title">
+            </md-input-container>
+
+            <md-input-container class="md-block" flex-gt-sm="">
+              <input id="fileInput" name="file" type="file" class="ng-hide" multiple>
+              <md-button id="uploadButton" class="md-raised md-primary"> Choose Image </md-button>
+            </md-input-container>
+
+            <md-input-container class="md-block" flex-gt-sm="">
+            <md-button class="md-accent md-raised" type="submit">Submit</md-button>
+          </md-input-container>
+
+          </md-content>
+      </md-tab>
+
+    </md-tabs>
+  </md-content>
+</div>

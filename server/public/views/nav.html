@@ -1,0 +1,15 @@
+ <div ng-controller="NavController" layout="row" layout-padding layout-align="space-around center">
+
+<md-content class="md-padding">
+  <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
+    <a href="#gallery"><md-nav-item md-nav-click="goto('gallery')" name="gallery">Gallery</md-nav-item></a>
+    <a href="#artists"><md-nav-item md-nav-click="goto('artists')" name="artists">Artists</md-nav-item></a>
+    <a href="#submit"><md-nav-item md-nav-click="goto('submit')" name="submit">Submit</md-nav-item></a>
+  </md-nav-bar>
+
+  <!-- <div class="ext-content">
+    External content for `<span>{{currentNavItem}}</span>
+
+  </div> -->
+</md-content>
+</div>
