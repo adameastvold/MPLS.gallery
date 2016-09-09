@@ -1,11 +1,75 @@
-.grid-item { width: 200px; }
-.grid-item--width2 { width: 400px; }
+/*========UPLOAD============*/
+.drop-box {
+  background: #f8f8f8;
+  border: 5px dashed #DDD;
+  width: 200px;
+  text-align: center;
+  padding: 25px;
+  margin: 10px;
+}
+
+.dragover {
+  border: 5px dashed blue;
+}
+
+/*=========IMAGE CROP=========*/
+
+.drop-box-container {
+  height: 250px;
+  width: 250px;
+  margin: 0 auto;
+  display: table;
+}
+
+.photo-img{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  margin: auto;
+  text-align: center;
+}
+
+
+
+/*.grid {
+    border: 1px solid #cccccc;
+    list-style: none;
+    background: #ffffff;
+    box-sizing: border-box;
+    -moz-box-sizing : border-box;
+    -webkit-transition: all 0.6s ease-out;
+    transition: all 0.6s ease-out;
+}
+.grid-img {
+    width: 100%;
+    vertical-align: middle;
+    -webkit-transition: opacity 0.6s ease-out;
+    transition: opacity 0.6s ease-out;
+    background-color: #fff;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.grid-img.img-loaded{
+    visibility: visible;
+    opacity: 1;
+}*/
+
+
+
+
+
+/*.grid-item { width: 200px; }*/
+/*.grid-item--width2 { width: 400px; }
 
 .artistSubmitBox {
 
   margin-left: 20px;
   width: 50%;
-}
+}*/
 
 .md-tabs-centered-wrapper{
   display:flex;

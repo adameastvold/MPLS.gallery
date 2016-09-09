@@ -11,24 +11,46 @@
           <md-input-container flex="100">
 
           <md-input-container class="md-block" flex-gt-sm="">
-            <input required="" type="text" name="artist_name" placeholder="Artist Name">
+            <input ng-model="artistInfo.name" required="" type="text" name="artist_name" placeholder="Artist Name">
           </md-input-container>
 
           <md-input-container class="md-block" flex-gt-sm="">
-            <input required="" type="text" name="artist_email" placeholder="Email">
+            <input ng-model="artistInfo.email"required="" type="text" name="artist_email" placeholder="Email">
           </md-input-container>
 
           <md-input-container class="md-block" flex-gt-sm="">
-            <input required="" type="text" name="artist_description" placeholder="Short Description">
+            <input ng-model="artistInfo.description"required="" type="text" name="artist_description" placeholder="Short Description">
           </md-input-container>
 
-          <md-input-container class="md-block" flex-gt-sm="">
-            <input id="fileInput" name="file" type="file" class="ng-hide" multiple>
+          <!-- <md-input-container class="md-block" flex-gt-sm="">
+            <input ng-model="artistInfo.aboutImage" id="fileInput" name="file" type="file" class="ng-hide" multiple>
             <md-button id="uploadButton" class="md-raised md-primary"> Choose About Image </md-button>
-          </md-input-container>
+          </md-input-container> -->
+
+          <!-- <md-content class="md-padding" layout-xs="column" layout="row">
+            <div flex-xs flex-gt-xs="none" layout="column"> -->
+              <md-card>
+                <md-card-title>
+                  <md-card-title-text>
+                    <span class="md-headline">About Image</span>
+                  </md-card-title-text>
+                </md-card-title>
+                <md-card-content layout="column" layout-align="center center" style="text-align:center;">
+                  <div ng-show="!image.originalImage && !user.photo && !loading"
+                        class="drop-box drop-box-container"
+                        ngf-drag-over-class="drop-box-dragover"
+                        ngf-change="readFileImg($files)"
+                        ngf-drop ngf-select
+                        ng-model="artistInfo.aboutImage"
+                        ngf-multiple="false"
+                        ngf-allow-dir="false"
+                        accept="image/*" ng-cloak>
+                      <span>Drop image or click to upload about image</span>
+                    </div>
+                  </md-card>
 
           <md-input-container class="md-block" flex-gt-sm="">
-            <md-button class="md-accent md-raised" type="submit">Submit</md-button>
+            <md-button ng-click="submitArtist()" class="md-accent md-raised" type="submit">Submit</md-button>
           </md-input-container>
 
         </md-content>
@@ -39,22 +61,41 @@
 
           <md-input-container flex="33">
              <label>Artist</label>
-               <md-select ng-model="item.emotionObject.emotion">
-                 <md-option ng-repeat="" ng-value="artist">Artist</md-option>
+               <md-select ng-model="galleryInfo.artist">
+                 <!-- <md-option ng-value="artist">Artist</md-option> -->
                </md-select>
           </md-input>
 
             <md-input-container class="md-block" flex-gt-md="">
-              <input required="" type="text" name="title" placeholder="Title">
+              <input ng-model="galleryInfo.title" required="" type="text" name="title" placeholder="Title">
             </md-input-container>
 
-            <md-input-container class="md-block" flex-gt-sm="">
-              <input id="fileInput" name="file" type="file" class="ng-hide" multiple>
-              <md-button id="uploadButton" class="md-raised md-primary"> Choose Image </md-button>
+            <md-input-container class="md-block" flex-gt-md="">
+              <input ng-model="galleryInfo.medium" required="" type="text" name="medium" placeholder="Medium">
             </md-input-container>
 
+            <md-card>
+              <md-card-title>
+                <md-card-title-text>
+                  <span class="md-headline">Gallery Image</span>
+                </md-card-title-text>
+              </md-card-title>
+              <md-card-content layout="column" layout-align="center center" style="text-align:center;">
+                <div ng-show="!image.originalImage && !user.photo && !loading"
+                      class="drop-box drop-box-container"
+                      ngf-drag-over-class="drop-box-dragover"
+                      ngf-change="readFileImg(galleryInfo.photo)"
+                      ngf-drop ngf-select
+                      ng-model="galleryInfo.photo"
+                      ngf-multiple="false"
+                      ngf-allow-dir="false"
+                      accept="image/*" ng-cloak>
+                    <span>Drop image or click to upload gallery image</span>
+                  </div>
+                </md-card>
+
             <md-input-container class="md-block" flex-gt-sm="">
-            <md-button class="md-accent md-raised" type="submit">Submit</md-button>
+            <md-button ng-click="submitGallery()" class="md-accent md-raised" type="submit">Submit</md-button>
           </md-input-container>
 
           </md-content>

@@ -2,17 +2,20 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var path = require('path');
+var submitRoute = require('./routes/submissions');
 
 // MODULES
 var index = require('./routes/index');
 
 // Serve back static files
-app.use(express.static(path.join(__dirname, './public')));
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(express.static(path.join(__dirname, './public')));
 
 // Routes
 app.use('/', index);
+app.use('/submissions', submitRoute);
 
 
 
