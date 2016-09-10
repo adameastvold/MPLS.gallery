@@ -1,13 +1,23 @@
-myApp.factory('ArtFactory', ['$http', function($http) {
+myApp.factory('ArtFactory', ['$http', 'Upload', function($http, Upload) {
 
   var artist = undefined;
   var artists = undefined;
 
   var addArtist = function(artist) {
+    console.log('file?:', artist.aboutImage);
+    Upload.upload({
+                        url: '/submissions',
+                        data: {
+                          file: artist.aboutImage
+                        }
+                      }).then(function (response) {
+                              console.log('new:', response.data);
+                            });
+
+
     console.log('this is in the factory:', artist);
       var promise = $http.post('/submissions', artist).then(function(response) {
         console.log('post completed');
-
 
       });
 
@@ -19,18 +29,6 @@ myApp.factory('ArtFactory', ['$http', function($http) {
        artists = response.data;
        console.log('this is the artists array:', artists);
      });
-
- //     var submit = function(){
- //       Artist.upload({
- //         url: '/uploads',
- //         method: 'post',
- //         data: artists
- //       }).then(function (response) {
- //         console.log(response.data);
- //         artists.push(response.data);
- //         artist = {};
- //       })
- // }
 
 
     return {

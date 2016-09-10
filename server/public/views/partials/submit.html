@@ -39,9 +39,10 @@
                 <md-card-content layout="column" layout-align="center center" style="text-align:center;">
                   <div ng-show="!image.originalImage && !user.photo && !loading"
                         name="file"
+                        enctype="multipart/form-data"
                         class="drop-box drop-box-container"
                         ngf-drag-over-class="drop-box-dragover"
-                      
+
                         ngf-drop ngf-select
                         ngf-max-size="25MB"
                         ng-model="artistInfo.aboutImage"

@@ -3,12 +3,13 @@ var app = express();
 var bodyParser = require('body-parser');
 var path = require('path');
 var mongoose = require('mongoose');
-var multer = require('multer');
-var submitRoute = require('./routes/submissions');
 
-// MODULES
+
+
+// MODULES & ROUTES
+var submitRoute = require('./routes/submissions');
 var index = require('./routes/index');
-// var uploads = require('./routes/uploads');
+
 
 
 // MONGO HOOK UP

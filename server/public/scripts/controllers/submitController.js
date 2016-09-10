@@ -1,4 +1,4 @@
-myApp.controller("SubmitController", ["$scope", "$location", "ArtFactory", function($scope, $location, ArtFactory) {
+myApp.controller("SubmitController", ["$scope", "$location", "ArtFactory", "Upload", function($scope, $location, ArtFactory, Upload) {
   console.log("SubmitController works");
 
   $scope.artFactory = ArtFactory;
@@ -37,8 +37,17 @@ myApp.controller("SubmitController", ["$scope", "$location", "ArtFactory", funct
             $scope.artFactory.addArtist($scope.artistInfo).then(function(response) {
               $scope.artist = $scope.artFactory.artistData();
               console.log('SUCCESS!');
-            });
-          };
+                              })};
+
+
+
+          // Upload.upload({
+          //             url: '/uploads',
+          //             data: {
+          //                 file: file,
+          //                 'user': $scope.user,
+          //                 'comment': $scope.comment
+          //             }
 
           //     $scope.submit = function(){
           //       Upload.upload({
