@@ -2,7 +2,9 @@ var express = require('express');
 var router = express.Router();
 var pg = require('pg');
 var connect = require('../modules/connection');
-
+var fs = require('fs');
+var multer = require('multer');
+var upload = multer({dest: 'uploads/'});
 
 
 // router.get('/', function(req, res) {
@@ -21,14 +23,15 @@ var connect = require('../modules/connection');
 //     });
 //   });
 // });
-  console.log('working!')
 router.post('/', function(req, res) {
   console.log('working!')
   var artist = req.body;
-  var aboutImg = req.files;
+  // var image = req.file;
 
+// console.log('this is your artist photo:', image);
   console.log('this is your artist info:', artist);
-  console.log('this is your aboutIMG file:', aboutImg);
+  res.sendStatus(200);
+  // console.log('this is your aboutIMG file:', aboutImg);
   // pg.connect(connect, function(err, client, done) {
   //   client.query('INSERT INTO people (name) ' +
   //   'VALUES ($1)',
@@ -46,5 +49,4 @@ router.post('/', function(req, res) {
 });
 
 
-  console.log('working!')
 module.exports = router;

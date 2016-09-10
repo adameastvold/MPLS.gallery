@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var path = require('path');
+var multer = require('multer');
 var submitRoute = require('./routes/submissions');
 
 // MODULES
@@ -14,8 +15,9 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, './public')));
 
 // Routes
-app.use('/', index);
+
 app.use('/submissions', submitRoute);
+app.use('/', index);
 
 
 

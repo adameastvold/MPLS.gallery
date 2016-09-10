@@ -1,7 +1,7 @@
-myApp.controller("SubmitController", ["$scope", "$location", "ImageFactory", function($scope, $location, ImageFactory) {
+myApp.controller("SubmitController", ["$scope", "$location", "ArtFactory", function($scope, $location, ArtFactory) {
   console.log("SubmitController works");
 
-  $scope.imageFactory = ImageFactory;
+  $scope.artFactory = ArtFactory;
 
   $scope.artistArray = [];
   $scope.artistInfo = {};
@@ -11,14 +11,14 @@ myApp.controller("SubmitController", ["$scope", "$location", "ImageFactory", fun
 
 
 //============STORES ARTIST INFO==========
-  $scope.submitArtist = function() {
-
-        $scope.artistArray.push($scope.artistInfo);
-        $scope.artistInfo = {};
-
-        console.log($scope.artistArray);
-
-    };
+  // $scope.submitArtist = function() {
+  //
+  //       $scope.artistArray.push($scope.artistInfo);
+  //       $scope.artistInfo = {};
+  //
+  //       console.log($scope.artistArray);
+  //
+  //   };
 
 //============STORES GALLERY INFO=========
     $scope.submitGallery = function() {
@@ -33,12 +33,13 @@ myApp.controller("SubmitController", ["$scope", "$location", "ImageFactory", fun
 
 //============SEND OBJECT TO FACTORY=======
       $scope.addArtist = function() {
-            console.log('adding an artist....');
-            $scope.imageFactory.addName($scope.artistInfo.name).then(function(response) {
-              // $scope.people = $scope.dataFactory.peopleData();
+            console.log('adding an artist....', $scope.artistInfo.aboutImage);
+            $scope.artFactory.addArtist($scope.artistInfo).then(function(response) {
+              $scope.artist = $scope.artFactory.artistData();
               console.log('SUCCESS!');
             });
           };
+
 
 
 }]);

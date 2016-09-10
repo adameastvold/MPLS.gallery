@@ -7,6 +7,7 @@
   <md-content>
     <md-tabs md-dynamic-height md-border-bottom>
       <md-tab label="Submit Artist">
+        <!-- <form enctype="multipart/form-data"> -->
         <md-content layout-padding class="md-no-momentum">
           <md-input-container flex="100">
 
@@ -39,7 +40,7 @@
                   <div ng-show="!image.originalImage && !user.photo && !loading"
                         class="drop-box drop-box-container"
                         ngf-drag-over-class="drop-box-dragover"
-                        ngf-change="readFileImg($files)"
+                        ngf-change="readFileImg(artistInfo.aboutImage)"
                         ngf-drop ngf-select
                         ng-model="artistInfo.aboutImage"
                         ngf-multiple="false"
@@ -50,10 +51,11 @@
                   </md-card>
 
           <md-input-container class="md-block" flex-gt-sm="">
-            <md-button ng-click="submitArtist()" class="md-accent md-raised" type="submit">Submit</md-button>
+            <md-button ng-click="addArtist()" class="md-accent md-raised" type="submit">Submit</md-button>
           </md-input-container>
 
         </md-content>
+      <!-- </form> -->
       </md-tab>
 
       <md-tab label="Gallery Submission">
