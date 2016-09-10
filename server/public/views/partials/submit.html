@@ -38,10 +38,12 @@
                 </md-card-title>
                 <md-card-content layout="column" layout-align="center center" style="text-align:center;">
                   <div ng-show="!image.originalImage && !user.photo && !loading"
+                        name="file"
                         class="drop-box drop-box-container"
                         ngf-drag-over-class="drop-box-dragover"
-                        ngf-change="readFileImg(artistInfo.aboutImage)"
+                      
                         ngf-drop ngf-select
+                        ngf-max-size="25MB"
                         ng-model="artistInfo.aboutImage"
                         ngf-multiple="false"
                         ngf-allow-dir="false"
@@ -53,7 +55,6 @@
           <md-input-container class="md-block" flex-gt-sm="">
             <md-button ng-click="addArtist()" class="md-accent md-raised" type="submit">Submit</md-button>
           </md-input-container>
-
         </md-content>
       <!-- </form> -->
       </md-tab>

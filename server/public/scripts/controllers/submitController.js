@@ -40,6 +40,16 @@ myApp.controller("SubmitController", ["$scope", "$location", "ArtFactory", funct
             });
           };
 
-
+          //     $scope.submit = function(){
+          //       Upload.upload({
+          //         url: '/uploads',
+          //         method: 'post',
+          //         data: $scope.upload
+          //       }).then(function (response) {
+          //         console.log(response.data);
+          //         $scope.uploads.push(response.data);
+          //         $scope.upload = {};
+          //       })
+          // }
 
 }]);
