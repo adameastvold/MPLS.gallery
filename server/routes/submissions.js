@@ -4,6 +4,7 @@ var fs = require('fs');
 var Artist = require('../models/artistModel');
 var multer = require('multer');
 var upload = multer({dest: 'server/public/uploads/'});
+var cloudinary = require('cloudinary');
 
 //========GETS LIST OF ALL INFO IN DATABASE===========
 router.get('/', function (req, res, next) {
@@ -40,6 +41,14 @@ router.get('/:uuid/:filename', function (req, res, next) {
  * Create's the file in the database
  */
 router.post('/', upload.single('file'), function (req, res, next) {
+        console.log('this is req.file:', req.file);
+      //CLOUDINARY SEND
+    //   cloudinary.uploader.upload(req.file.path, function(result) {
+    //    res.send(result);
+    //    console.log(result);
+    //  });
+
+
   var newArtist = {
     name: req.body.name,
     description: req.body.description,
@@ -55,6 +64,15 @@ router.post('/', upload.single('file'), function (req, res, next) {
     } else {
       res.send(newArtist);
     }
+  });
+});
+
+
+//Cloudinary post
+router.post('/', upload.single('file'), function(req, res) {
+  cloudinary.uploader.upload(req.file.path, function(result) {
+    res.send(result);
+    console.log(result);
   });
 });
 

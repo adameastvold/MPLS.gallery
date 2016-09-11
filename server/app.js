@@ -10,6 +10,8 @@ var mongoose = require('mongoose');
 var submitRoute = require('./routes/submissions');
 var index = require('./routes/index');
 
+//ENV FILE:
+require('dotenv').config();
 
 
 // MONGO HOOK UP
