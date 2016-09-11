@@ -12,6 +12,21 @@
   border: 5px dashed blue;
 }
 
+/*==========SUBMISSIONS PAGE==========*/
+.submissionsBox {
+  /*border: 1px solid black;*/
+  margin: 0 350px 0 350px;
+  text-align: center;
+}
+
+/*==========LOGIN PAGE=========*/
+.loginBox {
+  /*border: 1px solid black;*/
+  margin: 0 500px 0 500px;
+  text-align: center;
+}
+
+
 /*=========IMAGE CROP=========*/
 
 .drop-box-container {

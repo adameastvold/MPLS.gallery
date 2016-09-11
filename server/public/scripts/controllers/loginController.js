@@ -1,21 +1,31 @@
 myApp.controller("LoginController", ["$scope", "$http", "$location", function($scope, $http, $location) {
   console.log("LoginController works");
 
-  $scope.userInfo = {};
+  $scope.userCred = {};
 
-  $scope.loginInfo = function() {
 
-        const email = $scope.userInfo.email;
-        const password = $scope.userInfo.password;
-        const auth = firebase.auth();
+    $scope.isLoggedIn = false;
+    $scope.userLogin = function(email, password) {
+        var userInfo = {
+            email: email,
+            password: password
+        };
 
-        const promise = auth.signInWithEmailAndPassword(email, password);
-        promise.catch(err, function(){
-          console.log('error in auth');
+        $http.post('/login', userInfo).then(function() {
+
+            console.log('user info sent', userInfo);
         });
+      }
 
-        console.log('username:', $scope.userInfo.email, 'password:', $scope.userInfo.password);
-        $scope.userInfo = {};
+    $scope.userRegister = function(email, password) {
+       var userInfo = {
+           email: email,
+           password: password
+       };
+       console.log('user info sent', userInfo);
+       $http.post('/register', userInfo).then(function(response) {
+           console.log('this is the register response:', response.data);
+       });
+     }
 
-    };
 }]);

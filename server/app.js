@@ -3,24 +3,17 @@ var app = express();
 var bodyParser = require('body-parser');
 var path = require('path');
 var mongoose = require('mongoose');
-var firebase = require("firebase");
 
 
 // MODULES & ROUTES
+var login = require('./routes/login');
+var register = require('./routes/register');
 var submitRoute = require('./routes/submissions');
 var index = require('./routes/index');
 
 //ENV FILE:
 require('dotenv').config();
 
-//FIREBASE INITIALIZE
-var config = {
-    apiKey: "AIzaSyABjuATKjZvTibSBy00IjYbuIz3Qgp0-m8",
-    authDomain: "mplsgallery.firebaseapp.com",
-    databaseURL: "https://mplsgallery.firebaseio.com",
-    storageBucket: "mplsgallery.appspot.com",
-  };
-  firebase.initializeApp(config);
 
 // MONGO HOOK UP
 var mongoURI = "mongodb://localhost:27017/mplsGallery";
@@ -46,6 +39,8 @@ app.use(express.static(path.join(__dirname, './public')));
 
 // Routes
 
+app.use('/login', login);
+app.use('/register', register);
 app.use('/submissions', submitRoute);
 app.use('/', index);
 // app.use('/uploads', uploads);

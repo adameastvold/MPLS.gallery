@@ -21,6 +21,10 @@ myApp.config(['$routeProvider', function($routeProvider) {
         .otherwise({
             redirectTo: 'gallery'
         });
-}]);
 
-// , "firebase"
+
+//         myApp.config(function($mdThemingProvider) {
+//           $mdThemingProvider.theme('default')
+//             .dark();
+// });
+}]);

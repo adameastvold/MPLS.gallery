@@ -1,24 +1,24 @@
-myApp.controller("GalleryController", ["$scope", "$http", "$location", 'imageService', 'angularGridInstance', function($scope, $http, $location, imageService, angularGridInstance) {
+myApp.controller("GalleryController", ["$scope", "$http", "$location", function($scope, $http, $location) {
   console.log("GalleryController works");
 
 
-      var loadImages = function(){
-              return $http.jsonp("https://api.flickr.com/services/feeds/photos_public.gne?format=json&jsoncallback=JSON_CALLBACK");
-          };
-         imageService.loadImages().then(function(data){
-              data.data.items.forEach(function(obj){
-                  var desc = obj.description,
-                      width = desc.match(/width="(.*?)"/)[1],
-                      height = desc.match(/height="(.*?)"/)[1];
-
-                  obj.actualHeight  = height;
-                  obj.actualWidth = width;
-              });
-             $scope.pics = data.data.items;
-          });
-          $scope.refresh = function(){
-              angularGridInstance.gallery.refresh();
-          }
+      // var loadImages = function(){
+      //         return $http.jsonp("https://api.flickr.com/services/feeds/photos_public.gne?format=json&jsoncallback=JSON_CALLBACK");
+      //     };
+      //    imageService.loadImages().then(function(data){
+      //         data.data.items.forEach(function(obj){
+      //             var desc = obj.description,
+      //                 width = desc.match(/width="(.*?)"/)[1],
+      //                 height = desc.match(/height="(.*?)"/)[1];
+      //
+      //             obj.actualHeight  = height;
+      //             obj.actualWidth = width;
+      //         });
+      //        $scope.pics = data.data.items;
+      //     });
+      //     $scope.refresh = function(){
+      //         angularGridInstance.gallery.refresh();
+      //     }
       }]);
 
 
