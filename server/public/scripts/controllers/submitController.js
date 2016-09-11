@@ -34,7 +34,7 @@ myApp.controller("SubmitController", ["$scope", "$location", "ArtFactory", "Uplo
 //============SEND OBJECT TO FACTORY=======
       $scope.addArtist = function() {
             console.log('adding an artist....', $scope.artistInfo.aboutImage);
-            $scope.artFactory.addArtist($scope.artistInfo).then(function(response) {
+            $scope.artFactory.addArtist($scope.artistInfo).then(function(response) {   //path error here TODO
               $scope.artist = $scope.artFactory.artistData();
               console.log('SUCCESS!');
                               })};

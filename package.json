@@ -21,6 +21,7 @@
     "cloudinary": "^1.4.1",
     "dotenv": "^2.0.0",
     "express": "^4.14.0",
+    "firebase": "^3.3.2",
     "masonry-layout": "^4.1.1",
     "material": "^0.1.1",
     "multer": "^1.2.0",

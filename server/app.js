@@ -3,7 +3,7 @@ var app = express();
 var bodyParser = require('body-parser');
 var path = require('path');
 var mongoose = require('mongoose');
-
+var firebase = require("firebase");
 
 
 // MODULES & ROUTES
