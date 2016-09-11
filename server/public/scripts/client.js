@@ -1,4 +1,4 @@
-var myApp = angular.module("myApp", ["ngRoute", "ngMaterial", "angularGrid", 'ngFileUpload']);
+var myApp = angular.module("myApp", ["ngRoute", "ngMaterial", "angularGrid", "ngFileUpload"]);
 myApp.config(['$routeProvider', function($routeProvider) {
 
     $routeProvider
@@ -14,7 +14,13 @@ myApp.config(['$routeProvider', function($routeProvider) {
             templateUrl: '/views/partials/submit.html',
             controller: 'SubmitController'
         })
+        .when('/login', {
+          templateUrl: '/views/partials/login.html',
+          controller: 'LoginController'
+        })
         .otherwise({
             redirectTo: 'gallery'
         });
 }]);
+
+// , "firebase"

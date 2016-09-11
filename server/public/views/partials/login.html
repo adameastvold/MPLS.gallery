@@ -1,0 +1,24 @@
+<md-content layout-padding class="md-no-momentum">
+
+    <md-input-container class="md-block" flex-gt-md="">
+      <input ng-model="userInfo.email" required="" type="text" name="email" placeholder="Email">
+    </md-input-container>
+
+    <md-input-container class="md-block" flex-gt-md="">
+      <input ng-model="userInfo.password" required="" type="text" name="password" placeholder="Password">
+    </md-input-container>
+
+    <md-input-container class="md-block" flex-gt-sm="">
+    <md-button ng-click="loginInfo(userInfo)" class="md-accent md-raised" type="submit">Login</md-button>
+    </md-input-container>
+
+    <md-input-container class="md-block" flex-gt-sm="">
+    <md-button class="md-accent md-raised" type="submit">Register</md-button>
+    </md-input-container>
+
+    <md-input-container class="md-block" flex-gt-sm="">
+    <md-button ng-hide="true" class="md-accent md-raised" type="submit">Register</md-button>
+    </md-input-container>
+
+
+  </md-content>
