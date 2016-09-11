@@ -72,7 +72,6 @@ router.post('/', upload.single('file'), function (req, res, next) {
 router.post('/', upload.single('file'), function(req, res) {
   cloudinary.uploader.upload(req.file.path, function(result) {
     res.send(result);
-    console.log(result);
   });
 });
 
