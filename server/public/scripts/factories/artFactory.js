@@ -11,7 +11,7 @@ myApp.factory('ArtFactory', ['$http', 'Upload', function($http, Upload) {
                           file: artist.aboutImage
                         }
                       }).then(function (response) {
-                              console.log('new:', response.data);
+                              console.log('clientside receiving:', response);
                             });
 
 
@@ -24,6 +24,8 @@ myApp.factory('ArtFactory', ['$http', 'Upload', function($http, Upload) {
       return promise;
     }
 
+
+//make separate post request to gather combined info with dynamic URL and artist info to send to MONGO
 
     $http.get('/submissions').then(function(response){
        artists = response.data;
