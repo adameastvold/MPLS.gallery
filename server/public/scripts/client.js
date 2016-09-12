@@ -1,4 +1,4 @@
-var myApp = angular.module("myApp", ["ngRoute", "ngMaterial", "angularGrid", "ngFileUpload"]);
+var myApp = angular.module("myApp", ["ngRoute", "ngMaterial", "angularGrid", "ngFileUpload", "firebase"]);
 myApp.config(['$routeProvider', function($routeProvider) {
 
     $routeProvider
@@ -22,9 +22,4 @@ myApp.config(['$routeProvider', function($routeProvider) {
             redirectTo: 'gallery'
         });
 
-
-//         myApp.config(function($mdThemingProvider) {
-//           $mdThemingProvider.theme('default')
-//             .dark();
-// });
 }]);

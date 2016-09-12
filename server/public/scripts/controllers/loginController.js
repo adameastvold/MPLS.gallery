@@ -12,9 +12,11 @@ myApp.controller("LoginController", ["$scope", "$http", "$location", function($s
         };
 
         $http.post('/login', userInfo).then(function() {
-
             console.log('user info sent', userInfo);
         });
+        $scope.userCred = {};
+        $scope.loginForm.$setUntouched();
+        $scope.loginForm.$setPristine();
       }
 
     $scope.userRegister = function(email, password) {
@@ -27,5 +29,6 @@ myApp.controller("LoginController", ["$scope", "$http", "$location", function($s
            console.log('this is the register response:', response.data);
        });
      }
+
 
 }]);

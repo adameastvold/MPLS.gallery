@@ -8,6 +8,7 @@
     <md-tabs md-dynamic-height md-border-bottom>
       <md-tab label="Submit Artist">
         <md-content layout-padding class="md-no-momentum">
+          <form name="artistForm" novalidate>
           <md-input-container flex="100">
 
           <md-input-container class="md-block" flex-gt-sm="">
@@ -34,7 +35,6 @@
                         enctype="multipart/form-data"
                         class="drop-box drop-box-container"
                         ngf-drag-over-class="drop-box-dragover"
-
                         ngf-drop ngf-select
                         ngf-max-size="25MB"
                         ng-model="artistInfo.aboutImage"
@@ -48,12 +48,14 @@
           <md-input-container class="md-block" flex-gt-sm="">
             <md-button ng-click="addArtist()" class="md-accent md-raised" type="submit">Submit</md-button>
           </md-input-container>
+        </form>
         </md-content>
-      <!-- <div><img src="http://res.cloudinary.com/beastprime/image/upload/v1473552206/pbp2zhftlekkwdqzi0eg.jpg" width='700' height='500' /></div> -->
+      <!-- <div><img src="{{$scope.artist.imgUrl}}" width='700' height='500' /></div> -->
       </md-tab>
 
       <md-tab label="Gallery Submission">
         <md-content layout-padding class="md-no-momentum">
+          <form name="galleryForm" novalidate>
 
           <md-input-container flex="33">
              <label>Artist</label>
@@ -93,7 +95,7 @@
             <md-input-container class="md-block" flex-gt-sm="">
             <md-button ng-click="submitGallery()" class="md-accent md-raised" type="submit">Submit</md-button>
           </md-input-container>
-
+</form>
           </md-content>
       </md-tab>
 

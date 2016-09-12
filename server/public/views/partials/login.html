@@ -3,7 +3,7 @@
 <div class="loginBox">
 
 <md-content layout-padding class="md-no-momentum">
-
+<form name="loginForm" novalidate>
     <md-input-container class="md-block" flex-gt-md="">
       <input ng-model="userCred.email" required="" type="text" name="email" placeholder="Email">
     </md-input-container>
@@ -19,10 +19,7 @@
     <md-input-container class="md-block" flex-gt-sm="">
     <md-button ng-click="userRegister(userCred.email, userCred.password)"class="md-accent md-raised" type="submit">Register</md-button>
     </md-input-container>
-
-    <md-input-container class="md-block" flex-gt-sm="">
-    <md-button ng-hide="true" class="md-accent md-raised" type="submit">Logout</md-button>
-    </md-input-container>
+</form>
 
 
   </md-content>

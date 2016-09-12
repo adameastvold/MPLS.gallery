@@ -1,5 +1,18 @@
-myApp.controller("SubmitController", ["$scope", "$location", "ArtFactory", "Upload", function($scope, $location, ArtFactory, Upload) {
+myApp.controller("SubmitController", ["$scope", "$location", "ArtFactory", "Upload", "$firebaseObject", function($scope, $location, ArtFactory, Upload, $firebaseObject) {
   console.log("SubmitController works");
+
+  var ref = new Firebase("https://mplsgallery.firebaseio.com");
+  var artistsRef = ref.child('artists');
+  $scope.artistsData = $firebaseObject(artistsRef);
+  console.log($scope.artistsData);
+
+
+
+
+
+
+
+
 
   $scope.artFactory = ArtFactory;
 
@@ -8,35 +21,30 @@ myApp.controller("SubmitController", ["$scope", "$location", "ArtFactory", "Uplo
   $scope.galleryArray = [];
   $scope.galleryInfo = {};
 
+  // $scope.artistPhoto =
 
-
-//============STORES ARTIST INFO==========
-  // $scope.submitArtist = function() {
-  //
-  //       $scope.artistArray.push($scope.artistInfo);
-  //       $scope.artistInfo = {};
-  //
-  //       console.log($scope.artistArray);
-  //
-  //   };
-
-//============STORES GALLERY INFO=========
+//============SEND GALLERY OBJECT TO FACTORY=======
     $scope.submitGallery = function() {
+          $scope.artFactory.submitGallery($scope.galleryInfo).then(function() {
+            $scope.galleryItem = $scope.artFactory.galleryData();
+            console.log('SUCCESS!');
+            console.log('this was sent back:', $scope.galleryItem);
+            $scope.galleryInfo = {};
+            $scope.galleryForm.$setUntouched();
+            $scope.galleryForm.$setPristine();
+                            })};
 
-          $scope.galleryArray.push($scope.galleryInfo);
-          $scope.galleryInfo = {};
 
-          console.log($scope.galleryArray);
-
-      };
-
-
-//============SEND OBJECT TO FACTORY=======
+//============SEND ARTIST OBJECT TO FACTORY=======
       $scope.addArtist = function() {
-            console.log('adding an artist....', $scope.artistInfo.aboutImage);
             $scope.artFactory.addArtist($scope.artistInfo).then(function(response) {   //path error here TODO
               $scope.artist = $scope.artFactory.artistData();
               console.log('SUCCESS!');
+              console.log('this was sent back:', $scope.artist)
+              $scope.artistInfo = {};
+              $scope.artistForm.$setUntouched();
+              $scope.artistForm.$setPristine();
+                // $scope.artistPhoto = $scope.artist.imgUrl;
                               })};
 
 
