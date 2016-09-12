@@ -1,16 +1,45 @@
 myApp.controller("SubmitController", ["$scope", "$location", "ArtFactory", "Upload", "$firebaseObject", function($scope, $location, ArtFactory, Upload, $firebaseObject) {
   console.log("SubmitController works");
 
+
   var ref = new Firebase("https://mplsgallery.firebaseio.com");
   var artistsRef = ref.child('artists');
-  $scope.artistsData = $firebaseObject(artistsRef);
-  console.log($scope.artistsData);
+  // var galleryRef = ref.child('/artists/' + $scope.galleryInfo.artistId + '/gallery')
+  // $scope.artistsData = $firebaseObject(artistsRef);
+  // $scope.galleryData = $firebaseObject(galleryRef);
+  // console.log($scope.artistsData);
+  // console.log($scope.galleryData);
 
+//=========ADDING ARTISTS TO FIREBASE & DROP DOWN FOR GALLERY===========
+  var sendArtistToFirebase = function(){
+    var messageRef = artistsRef.push();
+    messageRef.set({name: $scope.artist.name, email: $scope.artist.email, description: $scope.artist.description, aboutImage: $scope.artist.imgUrl});
 
+  };
 
+//this asks firebase to send me the artists id & object to store in my array
+  artistsRef.orderByChild('name').on('child_added', function(snapshot){
+    // console.log(snapshot.val());
+    var id = snapshot.key();
+    var artistName = snapshot.val().name;
+    $scope.artistForList = {
+      name: artistName,
+      id: id,
+    };
+    $scope.artistNameArray.push($scope.artistForList);
+    // console.log('this is your artist name array:', $scope.artistNameArray);
 
+  });
 
+  var sendGalleryToFirebase = function(){
+    var galleryRef = ref.child('/artists/' + $scope.galleryItem.artistId + '/gallery')
+    var messageRef = galleryRef.push();
+    messageRef.set({title: $scope.galleryItem.title, medium: $scope.galleryItem.medium, imgUrl: $scope.galleryItem.imgUrl});
 
+  }
+
+//The below array dynamically fills the drop down menu
+  $scope.artistNameArray = [];
 
 
 
@@ -29,6 +58,7 @@ myApp.controller("SubmitController", ["$scope", "$location", "ArtFactory", "Uplo
             $scope.galleryItem = $scope.artFactory.galleryData();
             console.log('SUCCESS!');
             console.log('this was sent back:', $scope.galleryItem);
+            sendGalleryToFirebase();
             $scope.galleryInfo = {};
             $scope.galleryForm.$setUntouched();
             $scope.galleryForm.$setPristine();
@@ -41,6 +71,7 @@ myApp.controller("SubmitController", ["$scope", "$location", "ArtFactory", "Uplo
               $scope.artist = $scope.artFactory.artistData();
               console.log('SUCCESS!');
               console.log('this was sent back:', $scope.artist)
+              sendArtistToFirebase();
               $scope.artistInfo = {};
               $scope.artistForm.$setUntouched();
               $scope.artistForm.$setPristine();

@@ -17,20 +17,20 @@ require('dotenv').config();
 
 
 // MONGO HOOK UP
-var mongoURI = "mongodb://localhost:27017/mplsGallery";
-
-var MongoDB = mongoose.connect(mongoURI).connection;
-MongoDB.on('error', function (err) {
-  if (err) {
-    console.log('mongodb connection error', err);
-  } else {
-    console.log('mongodb connection successful');
-  }
-});
-
-MongoDB.once('open', function () {
-  console.log('mongodb connection open');
-});
+// var mongoURI = "mongodb://localhost:27017/mplsGallery";
+//
+// var MongoDB = mongoose.connect(mongoURI).connection;
+// MongoDB.on('error', function (err) {
+//   if (err) {
+//     console.log('mongodb connection error', err);
+//   } else {
+//     console.log('mongodb connection successful');
+//   }
+// });
+//
+// MongoDB.once('open', function () {
+//   console.log('mongodb connection open');
+// });
 
 // Serve back static files
 

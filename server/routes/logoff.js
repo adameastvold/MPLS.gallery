@@ -8,15 +8,15 @@ var router = express.Router();
 // var user = checkLogin.signOut;
 // var status = checkLogin.logStatus();
 
-router.get('/', function(req, res){
-  console.log(status);
-  res.send(status);
-});
+// router.get('/', function(req, res){
+//   console.log(status);
+//   res.send(status);
+// });
 
 
 
 router.post('/', function(req, res) {
-    user;
+    // user;
 });
 
 

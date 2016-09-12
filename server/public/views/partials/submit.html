@@ -58,9 +58,9 @@
           <form name="galleryForm" novalidate>
 
           <md-input-container flex="33">
-             <label>Artist</label>
-               <md-select ng-model="galleryInfo.artist">
-                 <!-- <md-option ng-value="artist">Artist</md-option> -->
+             <label>Select Artist</label>
+               <md-select ng-model="galleryInfo.artistId">
+                 <md-option ng-repeat="artist in artistNameArray track by $index" value="{{artist.id}}">{{artist.name}}</md-option>
                </md-select>
           </md-input>
 
