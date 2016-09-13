@@ -13,7 +13,7 @@ var config = {
 
 
 var auth = firebase.auth();
-// var loggedOrNot = false;
+var loggedOrNot = false;
 
 
 //==========LOGIN===========
@@ -34,9 +34,10 @@ function register(email, password) {
 
 }
 
-//==========LOGOFF=============
+//===========LOGOFF=============
 function signOut() {
     auth.signOut();
+    console.log('hits signOut function');
 }
 
 
@@ -44,10 +45,10 @@ function signOut() {
 auth.onAuthStateChanged(function(firebaseUser) {
     if (firebaseUser) {
         console.log('User Logged In:', firebaseUser.email);
-        // loggedOrNot = true;
+        loggedOrNot = true;
     } else {
         console.log('not logged in');
-        // loggedOrNot = false;
+        loggedOrNot = false;
     }
 });
 
@@ -66,5 +67,6 @@ exports.userLogin = {
         return "";
     },
     login: login,
-    register: register
+    register: register,
+    signOut: signOut
 };

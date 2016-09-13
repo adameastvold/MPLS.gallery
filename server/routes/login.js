@@ -5,7 +5,7 @@ var router = express.Router();
 //modules
 
 var checkLogin = require('../modules/checkLogin.js');
-var user = checkLogin.userLogin
+var user = checkLogin.userLogin;
 
 
 router.post('/', function(req, res) {

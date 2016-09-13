@@ -1,4 +1,4 @@
-var myApp = angular.module("myApp", ["ngRoute", "ngMaterial", "angularGrid", "ngFileUpload", "firebase"]);
+var myApp = angular.module("myApp", ["ngRoute", "ngMaterial", "angularGrid", "ngFileUpload"]);
 myApp.config(['$routeProvider', function($routeProvider) {
 
     $routeProvider

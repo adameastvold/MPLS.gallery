@@ -1,4 +1,23 @@
 <h1>GALLERY</h1>
+{{galleryItems}}
+
+<!-- <ul class="dynamic-grid" angular-grid="pics">
+        <li data-ng-repeat="pic in galleryItems" class="grid" data-ng-clock>
+            <img src="" class="grid-img" data-actual-width = "500px"  data-actual-height="500px" />
+        </li>
+    </ul> -->
+
+<p ng-repeat="pic in galleryItems">{{pic}}</p>
+
+
+
+
+
+
+
+
+
+
 
 <!-- <ul class="dynamic-grid" angular-grid="pics" grid-width="300" gutter-size="10" angular-grid-id="gallery" refresh-on-img-load="false" >
      <li data-ng-repeat="pic in pics" class="grid">

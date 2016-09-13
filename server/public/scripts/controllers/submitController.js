@@ -1,4 +1,4 @@
-myApp.controller("SubmitController", ["$scope", "$location", "ArtFactory", "Upload", "$firebaseObject", function($scope, $location, ArtFactory, Upload, $firebaseObject) {
+myApp.controller("SubmitController", ["$scope", "$location", "ArtFactory", "Upload", function($scope, $location, ArtFactory, Upload) {
   console.log("SubmitController works");
 
 
@@ -32,11 +32,15 @@ myApp.controller("SubmitController", ["$scope", "$location", "ArtFactory", "Uplo
   });
 
   var sendGalleryToFirebase = function(){
-    var galleryRef = ref.child('/artists/' + $scope.galleryItem.artistId + '/gallery')
+    var galleryRef = ref.child('/artists/' + $scope.galleryItem.artistId + '/gallery');
     var messageRef = galleryRef.push();
-    messageRef.set({title: $scope.galleryItem.title, medium: $scope.galleryItem.medium, imgUrl: $scope.galleryItem.imgUrl});
+    messageRef.gallery();
+    messageRef.set({title: $scope.galleryItem.title, medium: $scope.galleryItem.medium, galleryUrl: $scope.galleryItem.imgUrl});
 
-  }
+  };
+
+  /* use ref.name() here*/
+ref.set({Name: name, Status: status, Position: position, UID: uid});
 
 //The below array dynamically fills the drop down menu
   $scope.artistNameArray = [];
