@@ -1,17 +1,24 @@
 <h1>GALLERY</h1>
-{{galleryItems}}
+<!-- <div ng-cloak> -->
 
-<!-- <ul class="dynamic-grid" angular-grid="pics">
+
+<ul class="dynamic-grid" angular-grid="pics" grid-width="300" gutter-size="10" angular-grid-id="gallery" refresh-on-img-load="false" >
+     <li data-ng-repeat="pic in galleryItems" class="grid">
+         <img src="{{pic.imgUrl}}" class="grid-img" data-actual-width = ""  data-actual-height="" />
+     </li>
+ </ul>
+
+    <!-- <ul>
         <li data-ng-repeat="pic in galleryItems" class="grid" data-ng-clock>
-            <img src="" class="grid-img" data-actual-width = "500px"  data-actual-height="500px" />
+            <img ng-src="{{pic.imgUrl}}" class="grid-img" data-actual-width = "500"  data-actual-height="500" />
         </li>
     </ul> -->
-
-<p ng-repeat="pic in galleryItems">{{pic}}</p>
-
-
+<!--
+<p ng-repeat="pic in galleryItems">{{pic.imgUrl}}</p>
 
 
+{{galleryItems}}
+ </div> -->
 
 
 

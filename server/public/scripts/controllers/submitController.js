@@ -13,7 +13,7 @@ myApp.controller("SubmitController", ["$scope", "$location", "ArtFactory", "Uplo
 //=========ADDING ARTISTS TO FIREBASE & DROP DOWN FOR GALLERY===========
   var sendArtistToFirebase = function(){
     var messageRef = artistsRef.push();
-    messageRef.set({name: $scope.artist.name, email: $scope.artist.email, description: $scope.artist.description, aboutImage: $scope.artist.imgUrl});
+    messageRef.set({name: $scope.artist.name, email: $scope.artist.email, description: $scope.artist.description, aboutImage: $scope.artist.imgUrl, imgHeight: $scope.artist.imgHeight, imgWidth: $scope.artist.imgWidth});
 
   };
 
@@ -34,13 +34,10 @@ myApp.controller("SubmitController", ["$scope", "$location", "ArtFactory", "Uplo
   var sendGalleryToFirebase = function(){
     var galleryRef = ref.child('/artists/' + $scope.galleryItem.artistId + '/gallery');
     var messageRef = galleryRef.push();
-    messageRef.gallery();
-    messageRef.set({title: $scope.galleryItem.title, medium: $scope.galleryItem.medium, galleryUrl: $scope.galleryItem.imgUrl});
+    messageRef.set({title: $scope.galleryItem.title, medium: $scope.galleryItem.medium, galleryUrl: $scope.galleryItem.imgUrl, imgHeight: $scope.galleryItem.imgHeight, imgWidth: $scope.galleryItem.imgWidth});
 
   };
 
-  /* use ref.name() here*/
-ref.set({Name: name, Status: status, Position: position, UID: uid});
 
 //The below array dynamically fills the drop down menu
   $scope.artistNameArray = [];
@@ -71,7 +68,7 @@ ref.set({Name: name, Status: status, Position: position, UID: uid});
 
 //============SEND ARTIST OBJECT TO FACTORY=======
       $scope.addArtist = function() {
-            $scope.artFactory.addArtist($scope.artistInfo).then(function(response) {   //path error here TODO
+            $scope.artFactory.addArtist($scope.artistInfo).then(function(response) {
               $scope.artist = $scope.artFactory.artistData();
               console.log('SUCCESS!');
               console.log('this was sent back:', $scope.artist)
@@ -79,7 +76,7 @@ ref.set({Name: name, Status: status, Position: position, UID: uid});
               $scope.artistInfo = {};
               $scope.artistForm.$setUntouched();
               $scope.artistForm.$setPristine();
-                // $scope.artistPhoto = $scope.artist.imgUrl;
+
                               })};
 
 

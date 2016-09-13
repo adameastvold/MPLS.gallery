@@ -9,10 +9,10 @@ myApp.controller("NavController", ["$scope", "$http", "$location", function($sco
   //   });
   // };
 
-  function signOut() {
-      auth.signOut();
-      console.log('hits signOut function');
-  }
+  // function signOut() {
+  //     auth.signOut();
+  //     console.log('hits signOut function');
+  // }
 
 
 
@@ -21,11 +21,11 @@ myApp.controller("NavController", ["$scope", "$http", "$location", function($sco
 
 
 
-  $scope.userLogoff = function() {
-      $http.post('/logoff').then(function() {
-
-          console.log('user has logged out');
-      });
-    }
+  // $scope.userLogoff = function() {
+  //     $http.post('/logoff').then(function() {
+  //
+  //         console.log('user has logged out');
+  //     });
+  //   }
 
 }]);

@@ -20,9 +20,11 @@ myApp.factory('ArtFactory', ['$http', 'Upload', function($http, Upload) {
                         }
                       })
                       .then(function (response) {
-                              console.log('clientside receiving:', response.data.url);
+                              console.log('clientside receiving:', response.data);
                               imgUrls.push(response.data.url);
                               artistObject.imgUrl = response.data.url;
+                              artistObject.imgHeight = response.data.height;
+                              artistObject.imgWidth = response.data.width;
                             });
 
                             // console.log('this is in the factory:', artist);
@@ -49,9 +51,11 @@ myApp.factory('ArtFactory', ['$http', 'Upload', function($http, Upload) {
                           }
                         })
                         .then(function (response) {
-                                console.log('clientside receiving:', response.data.url);
+                                console.log('clientside receiving:', response.data);
                                 imgUrls.push(response.data.url);
                                 galleryObject.imgUrl = response.data.url;
+                                galleryObject.imgHeight = response.data.height;
+                                galleryObject.imgWidth = response.data.width;
                               });
 
                               // console.log('this is in the factory:', galleryItem);
