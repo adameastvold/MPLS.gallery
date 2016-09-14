@@ -1,31 +1,47 @@
-myApp.controller("NavController", ["$scope", "$http", "$location", function($scope, $http, $location) {
+myApp.controller("NavController", ["$scope", "$http", "$location", "UserFactory", "AuthFactory", function($scope, $http, $location, UserFactory, AuthFactory) {
   console.log("NavController works");
 
 
+var userFactory = UserFactory;
 
-  // $scope.isLoggedIn = function(){
-  //   $http.get('/logoff').then(function(res){
-  //     console.log(res)
-  //   });
-  // };
-
-  // function signOut() {
-  //     auth.signOut();
-  //     console.log('hits signOut function');
-  // }
+var signOut = userFactory.signOut();
+var checkUserStatus = userFactory.checkUserStatus();
 
 
 
+$scope.isLoggedIn = false;
 
-//here is where I could set the variable for whether the user is logged in or not
+$scope.logOff = function(){
+  signOut();
+}
+
+
+$scope.auth = AuthFactory;
+
+$scope.auth.$onAuthStateChanged(function(user) {
+  $scope.user = user;
+
+  console.log(user); //change the path here
+});
 
 
 
-  // $scope.userLogoff = function() {
-  //     $http.post('/logoff').then(function() {
-  //
-  //         console.log('user has logged out');
-  //     });
-  //   }
+
+
+
+
+
+$scope.getUserData = function(){
+  checkUserStatus();
+  console.log(checkUserStatus());
+
+  if(checkUserStatus() == !null){
+    $scope.isLoggedIn = true;
+  } else {
+    $scope.isLoggedIn = false;
+  };
+
+}
+
 
 }]);

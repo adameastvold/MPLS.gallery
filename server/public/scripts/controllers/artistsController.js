@@ -1,4 +1,13 @@
-myApp.controller("ArtistsController", ["$scope", "$http", "$location", function($scope, $http, $location) {
+myApp.controller("ArtistsController", ["$scope", "$http", "$location", "AuthFactory", function($scope, $http, $location, AuthFactory) {
   console.log("ArtistsController works");
+
+
+  $scope.auth = AuthFactory;
+
+  $scope.auth.$onAuthStateChanged(function(user) {
+    $scope.user = user;
+
+    console.log(user); //change the path here
+  });
 
 }]);

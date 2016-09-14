@@ -72,27 +72,6 @@ myApp.factory('ArtFactory', ['$http', 'Upload', function($http, Upload) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-//TODO:make separate post request to gather combined info with dynamic URL and artist info to send to MONGO/FIREBASE
-
-    // $http.get('/submissions').then(function(response){
-    //    artists = response.data;
-    //    console.log('this is the artists array:', artists);
-    //  });
-
-
     return {
       artistData: function() {
         return artistObject;

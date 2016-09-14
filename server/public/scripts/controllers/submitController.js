@@ -4,11 +4,7 @@ myApp.controller("SubmitController", ["$scope", "$location", "ArtFactory", "Uplo
 
   var ref = new Firebase("https://mplsgallery.firebaseio.com");
   var artistsRef = ref.child('artists');
-  // var galleryRef = ref.child('/artists/' + $scope.galleryInfo.artistId + '/gallery')
-  // $scope.artistsData = $firebaseObject(artistsRef);
-  // $scope.galleryData = $firebaseObject(galleryRef);
-  // console.log($scope.artistsData);
-  // console.log($scope.galleryData);
+
 
 //=========ADDING ARTISTS TO FIREBASE & DROP DOWN FOR GALLERY===========
   var sendArtistToFirebase = function(){
