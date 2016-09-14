@@ -58,7 +58,7 @@ myApp.controller("SubmitController", ["$scope", "$location", "ArtFactory", "Uplo
           $scope.artFactory.submitGallery($scope.galleryInfo).then(function() {
             $scope.galleryItem = $scope.artFactory.galleryData();
             console.log('SUCCESS!');
-            console.log('this was sent back:', $scope.galleryItem);
+            // console.log('this was sent back:', $scope.galleryItem);
             sendGalleryToFirebase();
             $scope.galleryInfo = {};
             $scope.galleryForm.$setUntouched();
@@ -71,7 +71,7 @@ myApp.controller("SubmitController", ["$scope", "$location", "ArtFactory", "Uplo
             $scope.artFactory.addArtist($scope.artistInfo).then(function(response) {
               $scope.artist = $scope.artFactory.artistData();
               console.log('SUCCESS!');
-              console.log('this was sent back:', $scope.artist)
+              // console.log('this was sent back:', $scope.artist)
               sendArtistToFirebase();
               $scope.artistInfo = {};
               $scope.artistForm.$setUntouched();

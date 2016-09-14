@@ -25,7 +25,7 @@ myApp.factory('GalleryFactory', ['$http', '$q', function($http, $q) {
           if(gallery.key() ==  'gallery'){
             // console.log(gallery.val());
             gallery.forEach(function(imgUrl){
-              console.log(imgUrl.val());
+              console.log('this is the image url?:', imgUrl.val());
             galleryTemp.push(imgUrl.val());
           });
 

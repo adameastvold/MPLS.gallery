@@ -2,9 +2,9 @@
 <!-- <div ng-cloak> -->
 
 
-<ul class="dynamic-grid" angular-grid="pics" grid-width="300" gutter-size="10" angular-grid-id="gallery" refresh-on-img-load="false" >
+<ul class="dynamic-grid" angular-grid="pics" ag-grid-width="300" ag-gutter-size="10" ag-id="gallery" ag-refresh-on-img-load="false" >
      <li data-ng-repeat="pic in galleryItems" class="grid">
-         <img src="{{pic.imgUrl}}" class="grid-img" data-actual-width = ""  data-actual-height="" />
+         <img src="{{pic.galleryUrl}}" class="grid-img" data-actual-width = "{{pic.imgWidth}}"  data-actual-height="pic.imgHeight" />
      </li>
  </ul>
 
@@ -13,12 +13,12 @@
             <img ng-src="{{pic.imgUrl}}" class="grid-img" data-actual-width = "500"  data-actual-height="500" />
         </li>
     </ul> -->
-<!--
-<p ng-repeat="pic in galleryItems">{{pic.imgUrl}}</p>
+
+<!-- <p ng-repeat="pic in galleryItems">{{pic.imgUrl}}</p> -->
 
 
 {{galleryItems}}
- </div> -->
+
 
 
 

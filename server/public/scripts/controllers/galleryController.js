@@ -1,4 +1,4 @@
-myApp.controller("GalleryController", ["$scope", "$http", "$location", 'GalleryFactory', function($scope, $http, $location, GalleryFactory) {
+myApp.controller("GalleryController", ["$scope", "$http", "$location", 'GalleryFactory', 'angularGridInstance', function($scope, $http, $location, GalleryFactory, angularGridInstance) {
   console.log("GalleryController works");
 
 
