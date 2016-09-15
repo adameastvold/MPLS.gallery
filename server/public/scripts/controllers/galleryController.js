@@ -6,10 +6,7 @@ myApp.controller("GalleryController", ["$scope", "$http", "$location", 'GalleryF
   var test = GalleryFactory.galleryData();
 
   test().then(function(galleryItems){
-
     console.log('items from promise', galleryItems);
-
-
     $scope.galleryItems = galleryItems;
   });
 
@@ -19,7 +16,7 @@ myApp.controller("GalleryController", ["$scope", "$http", "$location", 'GalleryF
   $scope.auth.$onAuthStateChanged(function(user) {
     $scope.user = user;
 
-    console.log(user); //change the path here
+  //change the path here
   });
 
   }]);

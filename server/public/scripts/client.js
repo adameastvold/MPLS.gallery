@@ -29,22 +29,6 @@ myApp.config(['$routeProvider', '$sceDelegateProvider', '$mdThemingProvider', fu
 
 
 
-
-    //     $sceDelegateProvider.resourceUrlWhitelist([
-    //           'self',
-    //           'http://res.cloudinary.com/beastprime/image/upload/**',
-    //           'https://res.cloudinary.com/beastprime/image/upload/**'
-    // ]);
-  //
-  //   myApp.config( [
-  //     '$sceDelegateProvider',
-  //     function($sceDelegateProvider)
-  //     {
-  //         $sceDelegateProvider.resourceUrlWhitelist(['self', 'https://res.cloudinary.com/beastprime/image/upload/**']);
-  //     }
-  // ]);
-// }]);
-
           //
           // $mdThemingProvider.theme('default')
           // .dark();

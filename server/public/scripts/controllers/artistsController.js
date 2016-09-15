@@ -7,7 +7,7 @@ myApp.controller("ArtistsController", ["$scope", "$http", "$location", "AuthFact
   $scope.auth.$onAuthStateChanged(function(user) {
     $scope.user = user;
 
-    console.log(user); //change the path here
+  //change the path here
   });
 
 }]);

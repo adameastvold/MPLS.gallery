@@ -13,7 +13,7 @@ myApp.controller("LoginController", ["$scope", "$http", "$location", 'UserFactor
 
     $scope.userLogin = function(email, password) {
         login(email, password);
-        $scope.testUser();
+        // $scope.testUser();
 
 
         $scope.userCred = {};
@@ -23,7 +23,7 @@ myApp.controller("LoginController", ["$scope", "$http", "$location", 'UserFactor
 
     $scope.userRegister = function(email, password) {
         register(email, password);
-        $scope.testUser();
+        // $scope.testUser();
      }
 
      $scope.testUser = function(){
