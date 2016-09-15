@@ -3,9 +3,13 @@ myApp.controller("GalleryController", ["$scope", "$http", "$location", 'GalleryF
 
 
 
-  var test = GalleryFactory.galleryData();
+  var getGalleryObj = GalleryFactory.galleryData();
+  $scope.currentPhotoIndex = 0;
+  $scope.imgClicked = false;
 
-  test().then(function(galleryItems){
+
+
+  getGalleryObj().then(function(galleryItems){
     console.log('items from promise', galleryItems);
     $scope.galleryItems = galleryItems;
   });
@@ -18,5 +22,34 @@ myApp.controller("GalleryController", ["$scope", "$http", "$location", 'GalleryF
 
   //change the path here
   });
+
+  $scope.imgEnlarge = function(index){
+    console.log(index);
+    $scope.currentPhotoIndex = index;
+    $scope.imgClicked = true;
+    $scope.currentPhoto = $scope.galleryItems;
+    console.log($scope.currentPhoto[$scope.currentPhotoIndex].galleryUrl);
+
+  };
+
+  $scope.nextImage = function(){
+   if ($scope.currentPhotoIndex == $scope.galleryItems.length - 1){
+      $scope.currentPhotoIndex = 0;
+    } else {
+      $scope.currentPhotoIndex++;
+    };
+  };
+
+  $scope.prevImage = function(){
+    if($scope.currentPhotoIndex == 0){
+      $scope.currentPhotoIndex = $scope.galleryItems.length - 1;
+    } else {
+      $scope.currentPhotoIndex--;
+    };
+  };
+
+  $scope.closeWindow = function(){
+    $scope.imgClicked = false;
+  };
 
   }]);

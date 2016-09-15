@@ -34,6 +34,8 @@ myApp.config(['$routeProvider', '$sceDelegateProvider', '$mdThemingProvider', fu
           // .dark();
 
 
+
+
 }]);
 
 myApp.run(['$rootScope', '$location', 'AuthFactory', redirectHome]);

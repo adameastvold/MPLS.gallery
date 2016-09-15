@@ -1,6 +1,7 @@
 myApp.controller("SubmitController", ["$scope", "$location", "ArtFactory", "Upload", function($scope, $location, ArtFactory, Upload) {
   console.log("SubmitController works");
 
+$scope.artistNameArray = [];
 
   var ref = new Firebase("https://mplsgallery.firebaseio.com");
   var artistsRef = ref.child('artists');
@@ -14,8 +15,7 @@ myApp.controller("SubmitController", ["$scope", "$location", "ArtFactory", "Uplo
   };
 
 //this asks firebase to send me the artists id & object to store in my array
-  $scope.fillList = function(){
-    artistsRef.orderByChild('name').on('child_added', function(snapshot){
+  artistsRef.orderByChild('name').on('child_added', function(snapshot){
     // console.log(snapshot.val());
     var id = snapshot.key();
     var artistName = snapshot.val().name;
@@ -23,11 +23,10 @@ myApp.controller("SubmitController", ["$scope", "$location", "ArtFactory", "Uplo
       name: artistName,
       id: id,
     };
-    $scope.artistNameArray.push($scope.artistForList);  
+    $scope.artistNameArray.push($scope.artistForList);  //TODO: figure out how to only call this once
     // console.log('this is your artist name array:', $scope.artistNameArray);
 
   });
-};
 
   var sendGalleryToFirebase = function(){
     var galleryRef = ref.child('/artists/' + $scope.galleryItem.artistId + '/gallery');
@@ -38,7 +37,7 @@ myApp.controller("SubmitController", ["$scope", "$location", "ArtFactory", "Uplo
 
 
 //The below array dynamically fills the drop down menu
-  $scope.artistNameArray = [];
+
 
 
 

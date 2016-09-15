@@ -38,6 +38,7 @@ myApp.controller("LoginController", ["$scope", "$http", "$location", 'UserFactor
      $scope.auth.$onAuthStateChanged(function(user) {
        $scope.user = user;
        console.log(user); //change the path here
+        // $location.path('/submit');
      });
 
 

@@ -50,7 +50,7 @@
 /*=========GALLERY===========*/
 
 .galleryContainer {
-  border: 1px solid black;
+  /*border: 1px solid black;*/
   width: 1200px;
   margin: 0 auto 50px auto;
 }
@@ -82,7 +82,7 @@
 }
 
 .galleryContainer li:hover {
-  cursor: crosshair;
+  cursor: pointer;
 }
 
 /*==========GALLERY HOVER STATE=============*/
@@ -162,7 +162,268 @@
 }
 
 
+/*=========FULLSCREEN GALLERY IMAGES=========*/
 
+.fullScreenImage {
+  position: fixed;
+  z-index: 999;
+  max-width: 80%;
+  max-height: 80%;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+
+}
+
+.fullScreenBackground {
+  z-index: 900;
+  position: fixed;
+  top: 0;
+  background: rgba(0,0,0,0.9);
+  width: 100%;
+  height: 100%;
+}
+
+.imageTitle{
+  font: 200 30px/145px 'Arvo', Helvetica, Arial, sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+  position: fixed;
+  top: 90%;
+  left: 50%;
+  z-index: 1000;
+  -webkit-transform: translate(-50%, -50%);
+}
+
+.imageArtist{
+  font: 200 20px/145px 'Arvo', Helvetica, Arial, sans-serif;
+  text-align: center;
+  /*text-transform: uppercase;*/
+  color: white;
+  position: fixed;
+  top: 94.5%;
+  left: 50%;
+  z-index: 1000;
+  -webkit-transform: translate(-50%, -50%);
+}
+
+.exitFullscreen{
+  font: 200 20px/145px 'Arvo', Helvetica, Arial, sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+  position: fixed;
+  top: 5%;
+  left: 5%;
+  z-index: 1000;
+  -webkit-transform: translate(-50%, -50%);
+  outline: none;
+  cursor: pointer;
+}
+
+.nextImage {
+  outline: none;
+  position: fixed;
+  z-index: 998;
+  width: 45%;
+  height: 80%;
+  top: 50%;
+  left: 95%;
+
+  -webkit-transform: translate(-100%, -50%);
+
+}
+
+.nextImage:hover {
+  background-color: rgba(255,255,255,0.05);
+  cursor: pointer;
+
+}
+
+.nextActualImage {
+  height: 29.85px;
+  width: 18.9px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translate(0%, -50%);
+}
+
+.prevImage {
+  outline: none;
+  position: fixed;
+  z-index: 998;
+  width: 45%;
+  height: 80%;
+  top: 50%;
+  left: 5%;
+  -webkit-transform: translate(0%, -50%);
+
+}
+
+.prevImage:hover {
+  background-color: rgba(255,255,255,0.05);
+  cursor: pointer;
+
+}
+
+.prevActualImage {
+  height: 29.85px;
+  width: 18.9px;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(0%, -50%);
+}
+
+
+
+
+/*===========ARTIST PAGE===========*/
+.artistContainer {
+  /*border: 1px solid black;*/
+  width: 1200px;
+  margin: 0 auto 50px auto;
+
+}
+
+.artistGalleryBox {
+
+    width: 50%;
+    float: left;
+    height: 675px;
+    background-color: white;
+
+}
+.artistInfoBox {
+    width: 50%;
+    float: right;
+    height: 675px;
+    background-color: green;
+
+}
+
+#clear {
+    clear: both;
+}
+
+/*==========MEDIA QUERIES==========*/
+
+@media screen and (max-width: 1120px) {
+  .artistContainer {width: 840px;}
+}
+
+@media screen and (max-width: 840px) {
+  .artistContainer {width: 560px;}
+}
+
+@media screen and (max-width: 560px) {
+  .artistContainer {width: 280px;}
+}
+
+/*========ARTIST SHOWCASE LIST=========*/
+.artistContainer ul {
+
+  top: 0;
+  padding: 0;
+  height: 675px;
+  overflow-y: scroll;
+  margin-left: 10px;
+  margin: auto;
+  list-style-type: none;
+}
+
+.artistContainer li {
+  margin-left: 12px;
+  float: left;
+  position: relative;
+  width: 280px;
+  height: 187px;
+  overflow: hidden;
+}
+
+.artistContainer li:hover {
+  cursor: pointer;
+}
+
+/*========ARTIST MINI-GALLERY SHOWCASE LIST=========*/
+
+.artistContainer li p {
+  color: transparent;
+  background: transparent;
+  font: 200 30px/187px 'Arvo', Helvetica, Arial, sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  padding-top: 50px;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 187px;
+  margin: 0;
+
+
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.artistContainer li span {
+  color: transparent;
+  background: transparent;
+  font: 200 20px/145px 'Arvo', Helvetica, Arial, sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  padding-top: 100px;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 187px;
+  margin: 0;
+
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+/*==========ARTIST MINI-GALLERY HOVER STATE=============*/
+
+.artistContainer li:hover span {
+  color: white;
+  background: #000;
+  background: rgba(0,0,0,0.1);
+}
+
+.artistContainer li:hover p {
+  color: white;
+  background: #000;
+  background: rgba(0,0,0,0.3);
+}
+
+
+/*=========ARTIST MINI-GALLERY IMAGE STYLE========*/
+.artistContainer img {
+  width: 280px;
+  height: 187px;
+
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.artistContainer li:hover img {
+  width: 320px;
+  height: 213px;
+}
 
 
 .md-tabs-centered-wrapper{

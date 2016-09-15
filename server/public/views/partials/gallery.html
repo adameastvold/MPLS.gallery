@@ -2,6 +2,16 @@
 
 <div class="galleryContainer">
 <ul class="galleryListContainer">
-    <li ng-repeat="pic in galleryItems"><span>{{pic.artist}}</span><p>{{pic.title}}</p><img ng-src="{{pic.galleryUrl}}" height="320" width="212"/></li>
+    <li ng-click="imgEnlarge($index)" ng-repeat="pic in galleryItems track by $index"><span>{{pic.artistName}}</span><p>{{pic.galleryObj.title}}</p><img class="galleryImg" ng-src="{{pic.galleryObj.galleryUrl}}" alt="{{pic.galleryObj.title}}" height="320" width="212"/></li>
 </ul>
+</div>
+
+
+<div class="fullScreenBackground" ng-show="imgClicked">
+  <div class="exitFullscreen" ng-click="closeWindow()">X</div>
+  <div ng-click="nextImage()" class="nextImage"><img class="nextActualImage" src="../assets/images/right_arrow.png"/></div>
+  <div ng-click="prevImage()" class="prevImage"><img class="prevActualImage" src="../assets/images/left_arrow.png"/></div>
+  <p class="imageTitle">{{currentPhoto[currentPhotoIndex].galleryObj.title}}</p>
+  <p class="imageArtist">{{currentPhoto[currentPhotoIndex].artistName}}</p>
+    <img class="fullScreenImage" ng-src="{{currentPhoto[currentPhotoIndex].galleryObj.galleryUrl}}"/>
 </div>

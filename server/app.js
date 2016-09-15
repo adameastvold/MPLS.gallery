@@ -7,9 +7,9 @@ var path = require('path');
 
 
 // MODULES & ROUTES
-var login = require('./routes/login');
-var logoff = require('./routes/logoff');
-var register = require('./routes/register');
+// var login = require('./routes/login');
+// var logoff = require('./routes/logoff');
+// var register = require('./routes/register');
 var submitRoute = require('./routes/submissions');
 var index = require('./routes/index');
 
@@ -41,9 +41,9 @@ app.use(express.static(path.join(__dirname, './public')));
 
 // Routes
 
-app.use('/login', login);
-app.use('/logoff', logoff);
-app.use('/register', register);
+// app.use('/login', login);
+// app.use('/logoff', logoff);
+// app.use('/register', register);
 app.use('/submissions', submitRoute);
 app.use('/', index);
 // app.use('/uploads', uploads);

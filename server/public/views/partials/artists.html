@@ -1,1 +1,33 @@
 <h1 style="text-align:center;">ARTISTS</h1>
+
+
+<div class="artistContainer">
+
+    <div class="artistGalleryBox">
+      <ul class="artistListContainer">
+          <li ng-click="imgEnlarge($index)" ng-repeat="pic in artistItems track by $index"><p>{{pic.galleryObj.title}}</p><img class="galleryImg" ng-src="{{pic.galleryObj.galleryUrl}}" alt="{{pic.galleryObj.title}}" height="320" width="212"/></li>
+      </ul>
+    </div>
+
+
+
+    <div class="artistInfoBox">
+
+    </div>
+
+
+
+<div id="clear"></div>
+
+
+</div>
+
+
+<div class="fullScreenBackground" ng-show="imgClicked">
+  <div class="exitFullscreen" ng-click="closeWindow()">X</div>
+  <div ng-click="nextImage()" class="nextImage"><img class="nextActualImage" src="../assets/images/right_arrow.png"/></div>
+  <div ng-click="prevImage()" class="prevImage"><img class="prevActualImage" src="../assets/images/left_arrow.png"/></div>
+  <p class="imageTitle">{{currentPhoto[currentPhotoIndex].galleryObj.title}}</p>
+  <p class="imageArtist">{{currentPhoto[currentPhotoIndex].artistName}}</p>
+    <img class="fullScreenImage" ng-src="{{currentPhoto[currentPhotoIndex].galleryObj.galleryUrl}}"/>
+</div>
