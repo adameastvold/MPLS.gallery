@@ -2,6 +2,6 @@
 
 <div class="galleryContainer">
 <ul class="galleryListContainer">
-    <li ng-repeat="pic in galleryItems" class="galleryList"><p class="photoParagraph">{{pic.title}}</p><img class="galleryImages" ng-src="{{pic.galleryUrl}}" height="320" width="212"/></li>
+    <li ng-repeat="pic in galleryItems"><span>{{pic.artist}}</span><p>{{pic.title}}</p><img ng-src="{{pic.galleryUrl}}" height="320" width="212"/></li>
 </ul>
 </div>

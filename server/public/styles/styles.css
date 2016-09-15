@@ -69,11 +69,11 @@
 }
 
 /*========GALLERY SHOWCASE LIST=========*/
-.galleryListContainer {
+.galleryContainer ul {
   list-style-type: none;
 }
 
-.galleryList {
+.galleryContainer li {
   float: left;
   position: relative;
   width: 280px;
@@ -81,23 +81,25 @@
   overflow: hidden;
 }
 
-.galleryList:hover {
-  cursor: pointer;
+.galleryContainer li:hover {
+  cursor: crosshair;
 }
 
 /*==========GALLERY HOVER STATE=============*/
-.photoParagraph {
+.galleryContainer li p {
   color: transparent;
   background: transparent;
   font: 200 30px/187px 'Arvo', Helvetica, Arial, sans-serif;
   text-align: center;
   text-transform: uppercase;
+  padding-top: 50px;
 
   position: absolute;
   top: 0;
   left: 0;
   width: 280px;
   height: 187px;
+  margin: 0;
 
 
   -webkit-transition: all 1s ease;
@@ -107,15 +109,43 @@
   transition: all 1s ease;
 }
 
-.photoParagraph:hover {
+.galleryContainer li span {
+  color: transparent;
+  background: transparent;
+  font: 200 20px/145px 'Arvo', Helvetica, Arial, sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  padding-top: 100px;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 187px;
+  margin: 0;
+
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.galleryContainer li:hover span {
   color: white;
-  background: #000; /*fallback for old browsers*/
-  background: rgba(0,0,0,0.7);
+  background: #000;
+  background: rgba(0,0,0,0.1);
+}
+
+.galleryContainer li:hover p {
+  color: white;
+  background: #000;
+  background: rgba(0,0,0,0.3);
 }
 
 
 /*=========GALLERY IMAGE STYLE========*/
-.galleryImages {
+.galleryContainer img {
   width: 280px;
   height: 187px;
 
@@ -126,7 +156,7 @@
   transition: all 1s ease;
 }
 
-.galleryImages:hover {
+.galleryContainer li:hover img {
   width: 320px;
   height: 213px;
 }

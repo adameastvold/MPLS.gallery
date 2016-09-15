@@ -20,11 +20,13 @@ myApp.factory('GalleryFactory', ['$http', '$q', function($http, $q) {
       // var id = snapshot.key();
       // console.log(id);
       snapshot.forEach(function(artist){
-        // console.log(artist.val());
+        // console.log('this is the artist:', artist.val());
+        // var artistName = artist.val().name;
         artist.forEach(function(gallery){
           if(gallery.key() ==  'gallery'){
             // console.log(gallery.val());
             gallery.forEach(function(imgUrl){
+              // imgUrl.val().artist = artistName;
               console.log('this is the image url?:', imgUrl.val());
             galleryTemp.push(imgUrl.val());
           });

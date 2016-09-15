@@ -14,7 +14,8 @@ myApp.controller("SubmitController", ["$scope", "$location", "ArtFactory", "Uplo
   };
 
 //this asks firebase to send me the artists id & object to store in my array
-  artistsRef.orderByChild('name').on('child_added', function(snapshot){
+  $scope.fillList = function(){
+    artistsRef.orderByChild('name').on('child_added', function(snapshot){
     // console.log(snapshot.val());
     var id = snapshot.key();
     var artistName = snapshot.val().name;
@@ -22,10 +23,11 @@ myApp.controller("SubmitController", ["$scope", "$location", "ArtFactory", "Uplo
       name: artistName,
       id: id,
     };
-    $scope.artistNameArray.push($scope.artistForList);
+    $scope.artistNameArray.push($scope.artistForList);  
     // console.log('this is your artist name array:', $scope.artistNameArray);
 
   });
+};
 
   var sendGalleryToFirebase = function(){
     var galleryRef = ref.child('/artists/' + $scope.galleryItem.artistId + '/gallery');
