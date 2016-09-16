@@ -1,3 +1,34 @@
+@font-face {
+    font-family: Blacksword;
+    src: url('../assets/fonts/blacksword/Blacksword.otf');
+}
+
+@font-face {
+    font-family: Norse;
+    src: url('../assets/fonts/norse/Norse.otf');
+}
+
+
+
+
+/*========LOGO============*/
+#logo {
+  /*border: 1px solid black;*/
+  margin-left: 30px;
+  width: 375px;
+  height: 100px;
+}
+
+/*=========TOP HEADER=========*/
+
+.topHeader {
+  margin-top: -5px;
+  margin-bottom: -2.5px;
+  text-align: center;
+  font-size: 325%;
+  font-family: Blacksword;
+}
+
 /*========UPLOAD============*/
 .drop-box {
   background: #f8f8f8;
@@ -280,14 +311,15 @@
 
 
 /*===========ARTIST PAGE===========*/
-.artistContainer {
+.artistInfoContainer {
   /*border: 1px solid black;*/
   width: 1200px;
+  padding-top: 17.5px;
   margin: 0 auto 50px auto;
 
 }
 
-.artistGalleryBox {
+.artistInfoGalleryBox {
 
     width: 50%;
     float: left;
@@ -300,6 +332,7 @@
     float: right;
     height: 675px;
     background-color: green;
+    /*border: 1px solid black;*/
 
 }
 
@@ -322,7 +355,7 @@
 }
 
 /*========ARTIST SHOWCASE LIST=========*/
-.artistContainer ul {
+.artistInfoContainer ul {
 
   top: 0;
   padding: 0;
@@ -333,8 +366,131 @@
   list-style-type: none;
 }
 
-.artistContainer li {
+.artistInfoContainer li {
   margin-left: 12px;
+  float: left;
+  position: relative;
+  width: 280px;
+  height: 187px;
+  overflow: hidden;
+}
+
+.artistInfoContainer li:hover {
+  cursor: pointer;
+}
+
+/*========ARTIST MINI-GALLERY SHOWCASE LIST=========*/
+
+.artistInfoContainer li p {
+  color: transparent;
+  background: transparent;
+  font: 200 30px/187px 'Arvo', Helvetica, Arial, sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  padding-top: 50px;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 187px;
+  margin: 0;
+
+
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.artistInfoContainer li span {
+  color: transparent;
+  background: transparent;
+  font: 200 20px/145px 'Arvo', Helvetica, Arial, sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  padding-top: 100px;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 187px;
+  margin: 0;
+
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+/*==========ARTIST MINI-GALLERY HOVER STATE=============*/
+
+.artistInfoContainer li:hover span {
+  color: white;
+  background: #000;
+  background: rgba(0,0,0,0.1);
+}
+
+.artistInfoContainer li:hover p {
+  color: white;
+  background: #000;
+  background: rgba(0,0,0,0.3);
+}
+
+
+/*=========ARTIST MINI-GALLERY IMAGE STYLE========*/
+.artistInfoContainer img {
+  width: 280px;
+  height: 187px;
+
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.artistInfoContainer li:hover img {
+  width: 320px;
+  height: 213px;
+}
+
+
+
+
+
+
+/*===============LANDING DIV FOR ARTIST PAGE================*/
+/*=========ARTIST===========*/
+
+.artistContainer {
+  border: 1px solid black;
+  width: 1200px;
+  margin: 0 auto 50px auto;
+}
+
+/*==========GALLERY MEDIA QUERIES=======*/
+@media screen and (max-width: 1120px) {
+  .galleryContainer {width: 840px;}
+}
+
+@media screen and (max-width: 840px) {
+  .galleryContainer {width: 560px;}
+}
+
+@media screen and (max-width: 560px) {
+  .galleryContainer {width: 280px;}
+}
+
+/*========GALLERY SHOWCASE LIST=========*/
+.artistContainer ul {
+  list-style-type: none;
+}
+
+.artistContainer li {
   float: left;
   position: relative;
   width: 280px;
@@ -346,8 +502,7 @@
   cursor: pointer;
 }
 
-/*========ARTIST MINI-GALLERY SHOWCASE LIST=========*/
-
+/*==========GALLERY HOVER STATE=============*/
 .artistContainer li p {
   color: transparent;
   background: transparent;
@@ -393,8 +548,6 @@
   transition: all 1s ease;
 }
 
-/*==========ARTIST MINI-GALLERY HOVER STATE=============*/
-
 .artistContainer li:hover span {
   color: white;
   background: #000;
@@ -408,7 +561,7 @@
 }
 
 
-/*=========ARTIST MINI-GALLERY IMAGE STYLE========*/
+/*=========GALLERY IMAGE STYLE========*/
 .artistContainer img {
   width: 280px;
   height: 187px;
@@ -424,6 +577,8 @@
   width: 320px;
   height: 213px;
 }
+
+
 
 
 .md-tabs-centered-wrapper{

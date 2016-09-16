@@ -33,6 +33,12 @@ myApp.config(['$routeProvider', '$sceDelegateProvider', '$mdThemingProvider', fu
           // $mdThemingProvider.theme('default')
           // .dark();
 
+    $mdThemingProvider.theme('default')
+      .primaryPalette('grey')
+      .accentPalette('deep-purple');
+
+
+
 
 
 

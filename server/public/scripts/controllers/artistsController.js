@@ -1,30 +1,60 @@
 myApp.controller("ArtistsController", ["$scope", "$http", "$location", "AuthFactory", "GalleryFactory", function($scope, $http, $location, AuthFactory, GalleryFactory) {
   console.log("ArtistsController works");
 
+
+  var artistArrayGet = GalleryFactory.artistArray();
   var getArtistObj = GalleryFactory.galleryData();
   $scope.currentPhotoIndex = 0;
+  $scope.currentPhotoArray = [];
+
   $scope.imgClicked = false;
-  $scope.artistLink = 
+
+  $scope.artistLink = false;
+  $scope.currentArtistIndex = 0;
 
 
-  getArtistObj().then(function(galleryItems){
-    console.log('items from promise', galleryItems);
-
-
-    $scope.artistItems = galleryItems;
+  artistArrayGet().then(function(artistItems){
+    console.log('artist items from promise', artistItems);
+    $scope.artistArray = artistItems;
   });
+
+
+
+  // getArtistObj().then(function(galleryItems){
+  //   console.log('items from promise', galleryItems);
+  //   $scope.artistItems = galleryItems;
+  // });
+
+
+
+
+
+
+  $scope.selectArtist = function(index){
+    console.log('this is the selected artist:', index);
+    $scope.currentArtistIndex = index;
+    $scope.artistLink = true;
+    $scope.currentArtist = $scope.artistArray;
+    console.log('this is your currentArtist:', $scope.currentArtist[$scope.currentArtistIndex].gallery);
+
+    $scope.currentArtistGallery = $scope.currentArtist[$scope.currentArtistIndex].gallery;
+  }
 
 
 
 
 
   $scope.imgEnlarge = function(index){
+
     console.log(index);
     $scope.currentPhotoIndex = index;
-    $scope.imgClicked = true;
-    $scope.currentPhoto = $scope.artistItems;
-    console.log($scope.currentPhoto[$scope.currentPhotoIndex].galleryUrl);
 
+    $scope.imgClicked = true;
+    $scope.currentGallery = $scope.artistArray;
+    $scope.currentPhoto = $scope.currentGallery[$scope.currentArtistIndex].gallery;
+
+    $scope.currentPhotoArray.push($scope.currentPhoto);
+        console.log('this is the currentPhotoArray:', $scope.currentPhoto.galleryUrl);
   };
 
   $scope.nextImage = function(){
