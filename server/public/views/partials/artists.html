@@ -1,5 +1,6 @@
-<h1 class="topHeader">Ar{tists</h1>
-
+<div class="headerContainer"><h1 class="topHeader">Artists</h1>
+<div class="backImgBox" ng-click="goBack()" ng-if="artistLink"><img class="backImg" src="../assets/images/back-icon.png" /></div>
+</div>
 
 <div class="artistContainer" ng-if="!artistLink">
   <div class="artistGalleryBox">
@@ -14,14 +15,14 @@
 
     <div class="artistInfoGalleryBox" ng-if="artistLink">
       <ul class="artistListContainer">
-          <li ng-click="imgEnlarge($index)" ng-repeat="pic in currentArtistGallery track by $index"><p>{{pic.title}}</p><img class="galleryImg" ng-src="{{pic.galleryUrl}}" alt="{{pic.title}}" height="320" width="212"/></li>
+          <li ng-click="imgEnlarge($index)" ng-repeat="pic in currentArtistGallery track by $index"><p>{{pic.title}}</p><img class="galleryImg" ng-src="{{pic.galleryUrl}}" alt="{{pic.title}}" height="640" width="424"/></li>
       </ul>
     </div>
 
 
 
     <div class="artistInfoBox" ng-if="artistLink">
-      <div class="artistImage"><img ng-src="{{currentArtist[currentArtistIndex].aboutImage}}" height="640" width="424"/></div>
+      <div ><img class="artistImage" ng-src="{{aboutImage}}" /></div>
       <p class="artistDesc">{{currentArtist[currentArtistIndex].description}}</p>
       <p class="artistEmail">{{currentArtist[currentArtistIndex].email}}</p>
     </div>
@@ -38,7 +39,7 @@
   <div class="exitFullscreen" ng-click="closeWindow()">X</div>
   <div ng-click="nextImage()" class="nextImage"><img class="nextActualImage" src="../assets/images/right_arrow.png"/></div>
   <div ng-click="prevImage()" class="prevImage"><img class="prevActualImage" src="../assets/images/left_arrow.png"/></div>
-  <p class="imageTitle">{{currentPhoto[currentPhotoIndex].title}}</p>
-  <p class="imageArtist">{{currentPhoto[currentPhotoIndex].artistName}}</p>
-    <img class="fullScreenImage" ng-src="{{currentPhoto[currentPhotoIndex].galleryUrl}}"/>
+  <p class="imageTitle">{{artistGalleryArray[currentPhotoIndex].title}}</p>
+  <p class="imageArtist">{{artistGalleryArray[currentPhotoIndex].name}}</p>
+    <img class="fullScreenImage" ng-src="{{artistGalleryArray[currentPhotoIndex].galleryUrl}}"/>
 </div>

@@ -1,8 +1,9 @@
  <div ng-controller="NavController" layout="row" layout-padding layout-align="space-around center">
 
 <md-content class="md-padding">
+  <div id="logoWords">MPLS</div>
   <img id="logo" ng-src="../assets/images/minneapolis-skyline-1.png"/>
-  <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
+  <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links" class="navBar">
     <a href="#gallery"><md-nav-item md-nav-click="goto('gallery')" name="gallery">Gallery</md-nav-item></a>
     <a href="#artists"><md-nav-item md-nav-click="goto('artists')" name="artists">Artists</md-nav-item></a>
     <a href="#submit"><md-nav-item md-nav-click="goto('submit')" ng-hide="!user" ng-if="user" name="submit">Submit</md-nav-item></a>

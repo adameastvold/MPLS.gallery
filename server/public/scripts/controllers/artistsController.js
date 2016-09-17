@@ -5,10 +5,10 @@ myApp.controller("ArtistsController", ["$scope", "$http", "$location", "AuthFact
   var artistArrayGet = GalleryFactory.artistArray();
   var getArtistObj = GalleryFactory.galleryData();
   $scope.currentPhotoIndex = 0;
-  $scope.currentPhotoArray = [];
+
 
   $scope.imgClicked = false;
-
+  $scope.artistGalleryArray = [];
   $scope.artistLink = false;
   $scope.currentArtistIndex = 0;
 
@@ -36,6 +36,8 @@ myApp.controller("ArtistsController", ["$scope", "$http", "$location", "AuthFact
     $scope.artistLink = true;
     $scope.currentArtist = $scope.artistArray;
     console.log('this is your currentArtist:', $scope.currentArtist[$scope.currentArtistIndex].gallery);
+    $scope.aboutImage = $scope.currentArtist[$scope.currentArtistIndex].aboutImage;
+    console.log('about image:', $scope.aboutImage);
 
     $scope.currentArtistGallery = $scope.currentArtist[$scope.currentArtistIndex].gallery;
   }
@@ -46,19 +48,21 @@ myApp.controller("ArtistsController", ["$scope", "$http", "$location", "AuthFact
 
   $scope.imgEnlarge = function(index){
 
-    console.log(index);
+    console.log('currentPhotoIndex:', index);
     $scope.currentPhotoIndex = index;
-
     $scope.imgClicked = true;
-    $scope.currentGallery = $scope.artistArray;
-    $scope.currentPhoto = $scope.currentGallery[$scope.currentArtistIndex].gallery;
+    $scope.currentPhoto = $scope.currentArtistGallery;
+    angular.forEach($scope.currentPhoto, function(element){
+      $scope.artistGalleryArray.push(element);
+    });
 
-    $scope.currentPhotoArray.push($scope.currentPhoto);
-        console.log('this is the currentPhotoArray:', $scope.currentPhoto.galleryUrl);
+
+
+        console.log('this is the currentPhotoArray:', $scope.artistGalleryArray);
   };
 
   $scope.nextImage = function(){
-   if ($scope.currentPhotoIndex == $scope.artistItems.length - 1){
+   if ($scope.currentPhotoIndex == $scope.artistGalleryArray.length - 1){
       $scope.currentPhotoIndex = 0;
     } else {
       $scope.currentPhotoIndex++;
@@ -67,7 +71,7 @@ myApp.controller("ArtistsController", ["$scope", "$http", "$location", "AuthFact
 
   $scope.prevImage = function(){
     if($scope.currentPhotoIndex == 0){
-      $scope.currentPhotoIndex = $scope.artistItems.length - 1;
+      $scope.currentPhotoIndex = $scope.artistGalleryArray.length - 1;
     } else {
       $scope.currentPhotoIndex--;
     };
@@ -77,6 +81,9 @@ myApp.controller("ArtistsController", ["$scope", "$http", "$location", "AuthFact
     $scope.imgClicked = false;
   };
 
+  $scope.goBack = function(){
+    $scope.artistLink = false;
+  };
 
 
 

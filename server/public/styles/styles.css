@@ -8,7 +8,20 @@
     src: url('../assets/fonts/norse/Norse.otf');
 }
 
+@font-face {
+    font-family: OptimusPrinceps;
+    src: url('../assets/fonts/optimusprinceps/OptimusPrinceps.ttf');
+}
 
+@font-face {
+    font-family: couture-bld;
+    src: url('../assets/fonts/couture/couture-bld.otf');
+}
+
+@font-face {
+    font-family: Adam;
+    src: url('../assets/fonts/Adam.otf');
+}
 
 
 /*========LOGO============*/
@@ -17,16 +30,38 @@
   margin-left: 30px;
   width: 375px;
   height: 100px;
+  opacity: .5;
 }
+
+#logoWords {
+  font-family: Adam;
+  font-size: 800%;
+  color: black;
+  /*font-weight: bold;*/
+  position: absolute;
+  top: 42.5%;
+  left: 65px;
+  -webkit-transform: translate(0%, -50%);
+  /*border: 1px solid black;*/
+}
+
+/*=========NAV BAR=========*/
+.navBar {
+  text-align: center;
+  float: center;
+}
+
+
 
 /*=========TOP HEADER=========*/
 
 .topHeader {
-  margin-top: -5px;
+  margin-top: 0px;
   margin-bottom: -2.5px;
   text-align: center;
   font-size: 325%;
-  font-family: Blacksword;
+  font-family: Adam;
+  /*border: 1px solid black;*/
 }
 
 /*========UPLOAD============*/
@@ -102,6 +137,7 @@
 /*========GALLERY SHOWCASE LIST=========*/
 .galleryContainer ul {
   list-style-type: none;
+  padding-top: -5px;
 }
 
 .galleryContainer li {
@@ -311,6 +347,27 @@
 
 
 /*===========ARTIST PAGE===========*/
+
+.backImg {
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  display: inline-block;
+  top: -5 px;
+  left: -40px;
+}
+
+.backImgBox {
+  display: inline-block;
+  /*border: 1px solid black;*/
+  position: absolute;;
+  left: 250px;
+  top: 220px;
+  cursor: pointer;
+
+}
+
+
 .artistInfoContainer {
   /*border: 1px solid black;*/
   width: 1200px;
@@ -327,11 +384,12 @@
     background-color: white;
 
 }
+
 .artistInfoBox {
     width: 50%;
     float: right;
     height: 675px;
-    background-color: green;
+    /*background-color: green;*/
     /*border: 1px solid black;*/
 
 }
@@ -379,7 +437,15 @@
   cursor: pointer;
 }
 
+/*========ARTIST INFO BOX==========*/
+.artistImage {
+  /*max-height: 100%;*/
+  max-width: 100%;
+}
+
 /*========ARTIST MINI-GALLERY SHOWCASE LIST=========*/
+
+
 
 .artistInfoContainer li p {
   color: transparent;
@@ -442,7 +508,7 @@
 
 
 /*=========ARTIST MINI-GALLERY IMAGE STYLE========*/
-.artistInfoContainer img {
+.artistInfoContainer > .artistInfoGalleryBox img {
   width: 280px;
   height: 187px;
 
@@ -453,7 +519,7 @@
   transition: all 1s ease;
 }
 
-.artistInfoContainer li:hover img {
+.artistInfoContainer > .artistInfoGalleryBox li:hover img {
   width: 320px;
   height: 213px;
 }
@@ -467,7 +533,7 @@
 /*=========ARTIST===========*/
 
 .artistContainer {
-  border: 1px solid black;
+  /*border: 1px solid black;*/
   width: 1200px;
   margin: 0 auto 50px auto;
 }
