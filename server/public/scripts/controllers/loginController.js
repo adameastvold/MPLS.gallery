@@ -1,5 +1,5 @@
 myApp.controller("LoginController", ["$scope", "$http", "$location", 'UserFactory', 'AuthFactory', function($scope, $http, $location, UserFactory, AuthFactory) {
-  console.log("LoginController works");
+  // console.log("LoginController works");
 
 
   var userFactory = UserFactory;
@@ -28,7 +28,7 @@ myApp.controller("LoginController", ["$scope", "$http", "$location", 'UserFactor
 
      $scope.testUser = function(){
        checkUserStatus()
-       console.log(checkUserStatus());
+      //  console.log(checkUserStatus());
 
      }
 

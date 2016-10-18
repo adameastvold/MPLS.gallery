@@ -1,5 +1,5 @@
 myApp.controller("GalleryController", ["$scope", "$http", "$location", 'GalleryFactory', 'AuthFactory', function($scope, $http, $location, GalleryFactory, AuthFactory) {
-  console.log("GalleryController works");
+  // console.log("GalleryController works");
 
 
 
@@ -10,15 +10,15 @@ myApp.controller("GalleryController", ["$scope", "$http", "$location", 'GalleryF
 
 
   getGalleryObj().then(function(galleryItems){
-    console.log('items from promise', galleryItems);
+    // console.log('items from promise', galleryItems);
     $scope.galleryItems = galleryItems;
 
     $scope.galleryItems.forEach(function(gallery){
-      console.log(gallery);
+      // console.log(gallery);
 
     var temp =  _.propertyOf(gallery)('galleryObj');
     var lastTemp = _.propertyOf(temp)('dateAdded');
-    console.log("this is underscore", lastTemp);
+    // console.log("this is underscore", lastTemp);
 
 
 

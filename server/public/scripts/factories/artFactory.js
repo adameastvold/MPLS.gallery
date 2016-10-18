@@ -20,7 +20,7 @@ myApp.factory('ArtFactory', ['$http', 'Upload', function($http, Upload) {
                         }
                       })
                       .then(function (response) {
-                              console.log('clientside receiving:', response.data);
+                              // console.log('clientside receiving:', response.data);
                               imgUrls.push(response.data.url);
                               artistObject.imgUrl = response.data.url;
                               artistObject.imgHeight = response.data.height;
@@ -51,7 +51,7 @@ myApp.factory('ArtFactory', ['$http', 'Upload', function($http, Upload) {
                           }
                         })
                         .then(function (response) {
-                                console.log('clientside receiving:', response.data);
+                                // console.log('clientside receiving:', response.data);
                                 imgUrls.push(response.data.url);
                                 galleryObject.imgUrl = response.data.url;
                                 galleryObject.imgHeight = response.data.height;

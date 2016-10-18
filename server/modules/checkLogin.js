@@ -21,7 +21,7 @@ function login(email, password) {
 
     var promise = auth.signInWithEmailAndPassword(email, password);
     promise.catch(function(e) {
-        console.log("UserCred sent to Firebase:", e.message);
+        // console.log("UserCred sent to Firebase:", e.message);
     })
 }
 
@@ -29,7 +29,7 @@ function login(email, password) {
 function register(email, password) {
   var promise = auth.createUserWithEmailAndPassword(email, password);
   promise.catch(function(e) {
-      console.log("Create User:", e.message);
+      // console.log("Create User:", e.message);
   });
 
 }

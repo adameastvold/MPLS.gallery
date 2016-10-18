@@ -1,5 +1,5 @@
 myApp.controller("NavController", ["$scope", "$http", "$location", "UserFactory", "AuthFactory", function($scope, $http, $location, UserFactory, AuthFactory) {
-  console.log("NavController works");
+  // console.log("NavController works");
 
 
 var userFactory = UserFactory;
@@ -21,7 +21,7 @@ $scope.auth = AuthFactory;
 $scope.auth.$onAuthStateChanged(function(user) {
   $scope.user = user;
 
-  console.log(user); //change the path here
+  // console.log(user); //change the path here
 });
 
 

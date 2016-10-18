@@ -1,5 +1,5 @@
 myApp.controller("SubmitController", ["$scope", "$location", "ArtFactory", "Upload", function($scope, $location, ArtFactory, Upload) {
-  console.log("SubmitController works");
+  // console.log("SubmitController works");
 
 $scope.artistNameArray = [];
 
@@ -54,10 +54,10 @@ $scope.artistNameArray = [];
     $scope.submitGallery = function() {
           $scope.artFactory.submitGallery($scope.galleryInfo).then(function() {
             $scope.galleryItem = $scope.artFactory.galleryData();
-            console.log('SUCCESS!');
+            // console.log('SUCCESS!');
             var dateAdded = new Date().toString();
             $scope.galleryItem.dateAdded = dateAdded;
-            console.log('this was sent back:', $scope.galleryItem.dateAdded);
+            // console.log('this was sent back:', $scope.galleryItem.dateAdded);
             sendGalleryToFirebase();
             $scope.galleryInfo = {};
             $scope.galleryForm.$setUntouched();
@@ -69,7 +69,7 @@ $scope.artistNameArray = [];
       $scope.addArtist = function() {
             $scope.artFactory.addArtist($scope.artistInfo).then(function(response) {
               $scope.artist = $scope.artFactory.artistData();
-              console.log('SUCCESS!');
+              // console.log('SUCCESS!');
               // console.log('this was sent back:', $scope.artist)
               sendArtistToFirebase();
               $scope.artistInfo = {};

@@ -1,5 +1,5 @@
 myApp.controller("ArtistsController", ["$scope", "$http", "$location", "AuthFactory", "GalleryFactory", function($scope, $http, $location, AuthFactory, GalleryFactory) {
-  console.log("ArtistsController works");
+  // console.log("ArtistsController works");
 
 
   var artistArrayGet = GalleryFactory.artistArray();
@@ -14,19 +14,19 @@ myApp.controller("ArtistsController", ["$scope", "$http", "$location", "AuthFact
 
 
   artistArrayGet().then(function(artistItems){
-    console.log('artist items from promise', artistItems);
+    // console.log('artist items from promise', artistItems);
     $scope.artistArray = artistItems;
   });
 
 
   $scope.selectArtist = function(index){
-    console.log('this is the selected artist:', index);
+    // console.log('this is the selected artist:', index);
     $scope.currentArtistIndex = index;
     $scope.artistLink = true;
     $scope.currentArtist = $scope.artistArray;
-    console.log('this is your currentArtist:', $scope.currentArtist[$scope.currentArtistIndex].gallery);
+    // console.log('this is your currentArtist:', $scope.currentArtist[$scope.currentArtistIndex].gallery);
     $scope.aboutImage = $scope.currentArtist[$scope.currentArtistIndex].aboutImage;
-    console.log('about image:', $scope.aboutImage);
+    // console.log('about image:', $scope.aboutImage);
 
     $scope.currentArtistGallery = $scope.currentArtist[$scope.currentArtistIndex].gallery;
   }
