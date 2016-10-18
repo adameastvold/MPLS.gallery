@@ -33,7 +33,7 @@ $scope.auth.$onAuthStateChanged(function(user) {
 
 $scope.getUserData = function(){
   checkUserStatus();
-  console.log(checkUserStatus());
+  // console.log(checkUserStatus());
 
   if(checkUserStatus() == !null){
     $scope.isLoggedIn = true;

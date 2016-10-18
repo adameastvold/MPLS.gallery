@@ -37,7 +37,7 @@ myApp.controller("ArtistsController", ["$scope", "$http", "$location", "AuthFact
 
   $scope.imgEnlarge = function(index){
 
-    console.log('currentPhotoIndex:', index);
+    // console.log('currentPhotoIndex:', index);
     $scope.currentPhotoIndex = index;
     $scope.imgClicked = true;
     $scope.currentPhoto = $scope.currentArtistGallery;
@@ -47,7 +47,7 @@ myApp.controller("ArtistsController", ["$scope", "$http", "$location", "AuthFact
 
 
 
-        console.log('this is the currentPhotoArray:', $scope.artistGalleryArray);
+        // console.log('this is the currentPhotoArray:', $scope.artistGalleryArray);
   };
 
   $scope.nextImage = function(){
