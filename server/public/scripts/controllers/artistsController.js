@@ -19,17 +19,6 @@ myApp.controller("ArtistsController", ["$scope", "$http", "$location", "AuthFact
   });
 
 
-
-  // getArtistObj().then(function(galleryItems){
-  //   console.log('items from promise', galleryItems);
-  //   $scope.artistItems = galleryItems;
-  // });
-
-
-
-
-
-
   $scope.selectArtist = function(index){
     console.log('this is the selected artist:', index);
     $scope.currentArtistIndex = index;

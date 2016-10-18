@@ -46,18 +46,18 @@ myApp.factory('GalleryFactory', ['$http', '$q', function($http, $q) {
 
 
       artistsRef.on('value', function(snapshot){
-      // console.log(snapshot.val());
+      console.log(snapshot.val());
       snapshot.forEach(function(artist){
 
         var artistName = artist.val().name;
         var artistDesc = artist.val().description;
         var artistEmail = artist.val().email;
         var artistImage = artist.val().aboutImage;
+        
         artist.forEach(function(gallery){
           if(gallery.key() ==  'gallery'){
             // console.log('this is gallery value:', gallery.key());
             gallery.forEach(function(imgUrl){
-
               // console.log('this is the object being received in factory:', imgUrl.val());
             galleryTemp.push({galleryObj: imgUrl.val(), artistName: artistName, artistDesc: artistDesc, artistEmail: artistEmail, artistImage: artistImage});
             });

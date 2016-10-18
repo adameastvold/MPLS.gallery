@@ -12,7 +12,20 @@ myApp.controller("GalleryController", ["$scope", "$http", "$location", 'GalleryF
   getGalleryObj().then(function(galleryItems){
     console.log('items from promise', galleryItems);
     $scope.galleryItems = galleryItems;
+
+    $scope.galleryItems.forEach(function(gallery){
+      console.log(gallery);
+
+    var temp =  _.propertyOf(gallery)('galleryObj');
+    var lastTemp = _.propertyOf(temp)('dateAdded');
+    console.log("this is underscore", lastTemp);
+
+
+
+    });
+
   });
+
 
 
   $scope.auth = AuthFactory;
@@ -24,11 +37,11 @@ myApp.controller("GalleryController", ["$scope", "$http", "$location", 'GalleryF
   });
 
   $scope.imgEnlarge = function(index){
-    console.log(index);
+    // console.log(index);
     $scope.currentPhotoIndex = index;
     $scope.imgClicked = true;
     $scope.currentPhoto = $scope.galleryItems;
-    console.log($scope.currentPhoto[$scope.currentPhotoIndex].galleryUrl);
+    // console.log($scope.currentPhoto[$scope.currentPhotoIndex].galleryUrl);
 
   };
 

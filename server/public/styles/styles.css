@@ -361,7 +361,7 @@
   display: inline-block;
   /*border: 1px solid black;*/
   position: absolute;;
-  left: 250px;
+  left: 220px;
   top: 220px;
   cursor: pointer;
 
@@ -391,7 +391,9 @@
     height: 675px;
     /*background-color: green;*/
     /*border: 1px solid black;*/
-
+    font-family: Adam;
+    font-weight: bold;
+    text-align: center;
 }
 
 #clear {

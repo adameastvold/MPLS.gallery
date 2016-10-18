@@ -31,7 +31,7 @@ $scope.artistNameArray = [];
   var sendGalleryToFirebase = function(){
     var galleryRef = ref.child('/artists/' + $scope.galleryItem.artistId + '/gallery');
     var messageRef = galleryRef.push();
-    messageRef.set({title: $scope.galleryItem.title, medium: $scope.galleryItem.medium, galleryUrl: $scope.galleryItem.imgUrl, imgHeight: $scope.galleryItem.imgHeight, imgWidth: $scope.galleryItem.imgWidth});
+    messageRef.set({title: $scope.galleryItem.title, medium: $scope.galleryItem.medium, galleryUrl: $scope.galleryItem.imgUrl, imgHeight: $scope.galleryItem.imgHeight, imgWidth: $scope.galleryItem.imgWidth, dateAdded: $scope.galleryItem.dateAdded});
 
   };
 
@@ -55,7 +55,9 @@ $scope.artistNameArray = [];
           $scope.artFactory.submitGallery($scope.galleryInfo).then(function() {
             $scope.galleryItem = $scope.artFactory.galleryData();
             console.log('SUCCESS!');
-            // console.log('this was sent back:', $scope.galleryItem);
+            var dateAdded = new Date().toString();
+            $scope.galleryItem.dateAdded = dateAdded;
+            console.log('this was sent back:', $scope.galleryItem.dateAdded);
             sendGalleryToFirebase();
             $scope.galleryInfo = {};
             $scope.galleryForm.$setUntouched();
